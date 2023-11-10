@@ -1,0 +1,17 @@
+#body{
+    width: 80%;
+    margin: 3rem;
+}
+
+.container-product{
+    border: 5px solid black;
+    width: 30rem;
+}
+.product-details{
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.divBtn{
+    margin: 0 0 1rem 2rem;
+}

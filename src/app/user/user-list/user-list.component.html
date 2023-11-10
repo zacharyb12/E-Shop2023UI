@@ -1,0 +1,38 @@
+<button class="btn btn-primary" [routerLink]="['/user/user-add']">Add user</button>
+<ng-container *ngIf="userList$ | async as users">
+  
+  <table class="table table-hover">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>FirstName</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Status</th>
+      <th>Adresse</th>
+      <th>favorite Items</th>
+      <th>Cart Items</th>
+      <th>Info</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.status}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.favoriteItems}}</td>
+            <td>{{user.cartItems}}</td>
+          
+            <td>
+              <a class="btn btn-primary" id="btn" [routerLink]="['/user/user-details', user.id]">show</a>
+            </td>
+
+        </tr>
+    </tbody>
+  </table>
+</ng-container>
+ 
+               

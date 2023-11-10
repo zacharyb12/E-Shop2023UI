@@ -1,0 +1,58 @@
+<h1>Shopping List</h1>
+
+<div *ngIf="cartItemsArray">
+  <table class="container-product" *ngIf="cartProducts && cartItemsArray">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Picture</th>
+        <th>Action</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartProducts; let i = index">
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.categoryId }}</td>
+        <td>{{ cartItemsArray[i].quantity }}</td>
+        <td>{{ item.imagePath }}</td>
+        <td>{{ cartItemModel.id }}</td>
+        <td>
+          {{ item.price * cartItemsArray[i].quantity }}
+        </td>
+        <td>
+          <button class="btn btn-primary" id="btn" (click)="addQuantity(item.id)">Add</button>
+          <button class="btn btn-primary" id="btn" (click)="removeQuantity(item.id)">Remove</button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>total</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!cartItemsArray">
+  <p>Your shopping cart is empty.</p>
+</div>
+
+<!-- Section pour afficher les informations du produit -->
+<div *ngIf="model.id">
+  <h2>Product Details</h2>
+  <p>Name: {{ model.name }}</p>
+  <p>Price: {{ model.price }}</p>
+  <p>Category: {{ model.categoryId }}</p>
+  <p>Description: {{ model.description }}</p>
+  <img [src]="model.imagePath" alt="Product Image" width="200">
+</div>

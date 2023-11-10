@@ -1,0 +1,50 @@
+
+<h1>Details du produit</h1>
+
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Review</th>
+        <th>Pictures</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Id: {{model.id}}
+            </td>
+            <td>
+                Category: {{modelProduct.categoryId}}
+            </td>
+            <td>
+                Name: {{modelProduct.name}}
+            </td>
+            <td>
+                Description: {{modelProduct.description}}
+            </td>
+            <td>
+                Price: {{modelProduct.price}}
+            </td>
+            <td>
+                Review: {{model.reviewText}}
+            </td>
+            <td>
+                <img [src]="modelProduct.imagePath" alt="" class="product-img">
+            </td>
+            <td>
+                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.id]">Edit</button>
+                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.id]">Add Cart</button>
+            </td>
+        </tr>
+    </tbody>
+    
+    
+    
+    
+</table>
+
+
+

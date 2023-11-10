@@ -1,0 +1,29 @@
+
+<ng-container *ngIf="products$ | async as products" >
+  
+  <table *ngFor="let product of products">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Picture</th>
+      <th>
+        <button id="add" [routerLink]="['/product/products-add']" class="btn btn-primary">Add Product</button>
+      </th>
+      </thead>
+      <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.price}}</td>
+        <td><img [src]="product.imagePath" alt="" class="product-img"></td>
+        <td>
+          <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-edit', product.id]">Edit</button>
+          <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-details', product.id]">show</button>
+        </td>
+      </tr>
+    </table>
+  </ng-container>

@@ -1,0 +1,39 @@
+<table>
+    <thead>
+        <th>Id</th>
+        <th>UserId</th>
+        <th>Order Date</th>
+        <th>Status</th>
+        <th>Total Price</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Id: {{model.Id}}
+            </td>
+            <td>
+                Category: {{model.UserId}}
+            </td>
+            <td>
+                Name: {{model.OrderDate}}
+            </td>
+            <td>
+                Description: {{model.Status}}
+            </td>
+            <td>
+                Price: {{model.TotalPrice}}
+            </td>
+
+            <td>
+                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.Id]">Edit</button>
+                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.Id]">Add Cart</button>
+            </td>
+        </tr>
+    </tbody>
+    
+    
+    
+    
+</table>
+

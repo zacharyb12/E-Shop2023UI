@@ -1,0 +1,23 @@
+h1{
+    width: 25rem;
+    margin: 1rem auto 1rem auto;
+}
+
+h1{
+    text-align: center;
+}
+
+table{
+    border: 4px solid black;
+    margin: 3rem auto;
+    width: 25rem;
+    text-align: center;
+}
+
+th{
+    border: 4px solid black;
+}
+
+td{
+    border: 4px solid black;
+}

@@ -1,0 +1,50 @@
+
+<ng-container *ngIf="orderList$ | async as orders">
+    <div *ngFor="let order of orders" class="container-product">
+
+
+        <table>
+          <thead >
+            <th>
+              Id
+            </th>
+            <th>
+              UserId
+            </th>
+            <th>
+              Order Date
+            </th>
+            <th>
+              Order Status
+            </th>
+            <th>
+              TotalPrice
+            </th>
+            <th>
+              <button class="btn btn-primary" [routerLink]="['/order/order-add']">Add Order</button>
+            </th>
+          </thead>
+          <tbody *ngFor="let order of orders">
+              <td>
+                {{order.Id}}
+              </td>
+            <td>
+              {{order.UserId}}
+            </td>
+            <td>
+              {{order.OrderDate}}
+            </td>
+            <td>
+              {{order.Status}}
+            </td>
+            <td>
+              {{order.TotalPrice}}
+            </td>
+            <td>
+              <button class="btn btn-primary" id="btn" [routerLink]="['/user/order-update', order.Id]">Edit</button>
+              <button class="btn btn-primary" id="btn" [routerLink]="['/user/order-details', order.Id]">show</button>
+            </td>
+          </tbody>
+        </table>
+
+

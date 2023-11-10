@@ -1,0 +1,43 @@
+<h1>Categories Options</h1>
+
+<table *ngIf="categories$ | async as categories">
+  <thead>
+
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      <button [routerLink]="['/categories/categories-add']" class="btn btn-primary" id="addButton">Add Category</button>
+    </th>
+
+  </thead>
+  <tbody *ngFor="let category of categories">
+    <tr>
+
+      <td>
+
+        {{category.id}}
+
+      </td>
+
+      <td>
+
+        {{category.name}}
+
+      </td>
+
+      <td>
+
+        <button id="editButton" class="btn btn-primary" [routerLink]="['/categories/categories-edit', category.id]">Edit</button>
+
+      </td>
+        
+    </tr>
+  </tbody>
+</table>
+    

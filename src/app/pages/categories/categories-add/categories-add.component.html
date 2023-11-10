@@ -1,0 +1,25 @@
+
+
+<h1 class="mt-3">Add Category</h1>
+
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+<table>
+    <thead>
+        <th>
+            <label class="form-label">Product Name</label>
+        </th>
+        <th></th>
+    </thead>
+    <tbody>
+        <td>
+            <input type="text" id="productName" class="form-control" name="Name"  [(ngModel)]="model.name">
+        </td>
+        <td>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </td>
+    </tbody>
+</table>
+
+
+    </form>
+
