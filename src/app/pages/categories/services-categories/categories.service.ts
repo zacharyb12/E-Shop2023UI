@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { environment } from '../../product/environments/environments';
 import { Category } from '../models-categories/categories.model';
 import { AddCategory } from '../models-categories/add-categories.model';
 import { UpdateCategory } from '../models-categories/update-categories.model';
+import { environment } from 'src/app/component/environments/environments';
 
 @Injectable({
   providedIn: 'root'

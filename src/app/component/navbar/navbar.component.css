@@ -1,9 +1,70 @@
-#listRight{
-    width: 19rem;
-    padding: 1rem;
-    margin: 0 0 0 auto;
+#navbar{
+    height: 12rem;
 }
 
-a{
-    margin: 0 1rem;
+#logoUser {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 4rem auto auto 0;
+    width: 20%;
+    height: 6rem;
+    float: left;
 }
+
+.logo {
+    margin: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+img{
+    width: 3rem;
+    height: 3rem;
+}
+
+#loginUser{
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    margin: 1rem 5rem auto auto;
+    height: 10%;
+    width: 14%;
+}
+
+#title {
+    width: 30%;
+    margin: 1rem auto 2rem auto;
+}
+
+h3, h5 {
+    width: 80%;
+    margin: 0.5rem auto;
+    height: 4rem;
+}
+
+#link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80rem;
+    margin: 2.5rem auto;
+}
+
+.nav-link {
+    background-color: white;
+    text-align: center;
+    width: 9rem;
+    height: 2rem;
+    margin: 0 auto;
+    text-decoration: none;
+    list-style: none;
+    border-radius: 10%;
+    border: 2px solid black;
+}
+
+
+/* * {
+    border: 5px solid red;
+} */

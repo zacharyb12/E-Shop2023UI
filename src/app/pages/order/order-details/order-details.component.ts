@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Order } from '../order-list/models/order.model';
+import { Order } from '../models/order.model';
 import { Subscription } from 'rxjs';
 import { OrderService } from '../services/order.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,11 +25,12 @@ export class OrderDetailsComponent {
   ) {  
 
     this.model = {
-      Id: "",
-      UserId: "",
-      OrderDate: new Date(),
-      Status: '',
-      TotalPrice: 0
+      id: "",
+      userId: "",
+      orderItemId : "",
+      orderDate: new Date(),
+      status: '',
+      totalPrice: 0
     }
   }
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Productservices } from '../../product/services-product/product.service';
 import { Router } from '@angular/router';
-import { AddOrder } from '../order-list/models/AddOrder.model';
+import { AddOrder } from '../models/AddOrder.model';
 import { OrderService } from '../services/order.service';
 
 @Component({
@@ -18,11 +18,11 @@ export class OrderAddComponent {
   private router : Router
   ) {  
     this.model = {
-      Id : '',
-      UserId : '',
-      OrderDate : new Date(),
-      Status : '',
-      TotalPrice : 0,
+      id : '',
+      userId : '',
+      orderDate : new Date(),
+      status : '',
+      totalPrice : 0,
     }
   }
   

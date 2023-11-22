@@ -31,6 +31,7 @@ export class ProductEditComponent {
 
     }
   }
+  
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -54,6 +55,22 @@ export class ProductEditComponent {
       });
     }
   }
+
+  updateProductName()
+  {
+
+  }
+
+  updateProductPrice()
+  {
+
+  }
+
+  updateProductDescription()
+  {
+
+  }
+
 
   deleteProduct(id: string): void {
     this.productService.deleteProduct(id).subscribe({

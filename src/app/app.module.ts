@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { environment } from 'src/app/component/environments/environments';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/home/homepage/homepage.component';
@@ -25,6 +26,7 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
 import { OrderAddComponent } from './pages/order/order-add/order-add.component';
 import { OrderUpdateComponent } from './pages/order/order-update/order-update.component';
 import { OrderDetailsComponent } from './pages/order/order-details/order-details.component';
+import { LoginUserComponent } from './user-interface/login-user/login-user.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { OrderDetailsComponent } from './pages/order/order-details/order-details
     UserDetailsComponent,
     OrderAddComponent,
     OrderUpdateComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    LoginUserComponent
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,8 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
 import { OrderAddComponent } from './pages/order/order-add/order-add.component';
 import { OrderDetailsComponent } from './pages/order/order-details/order-details.component';
 import { OrderUpdateComponent } from './pages/order/order-update/order-update.component';
+import { LoginUserComponent } from './user-interface/login-user/login-user.component';
+
 
 const routes: Routes = [
   { path: '' , component: HomepageComponent   },
@@ -38,6 +40,7 @@ const routes: Routes = [
   { path: 'user/user-add' , component: UserAddComponent},
   { path: 'user/user-update/:id' , component: UserUpdateComponent},
   { path: 'user/user-details/:id' , component: UserDetailsComponent},
+  {path : 'user/login-user' , component: LoginUserComponent},
 
 ];
 

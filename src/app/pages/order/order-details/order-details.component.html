@@ -10,24 +10,24 @@
     <tbody>
         <tr>
             <td>
-                Id: {{model.Id}}
+                Id: {{model.id}}
             </td>
             <td>
-                Category: {{model.UserId}}
+                Category: {{model.userId}}
             </td>
             <td>
-                Name: {{model.OrderDate}}
+                Name: {{model.orderDate}}
             </td>
             <td>
-                Description: {{model.Status}}
+                Description: {{model.status}}
             </td>
             <td>
-                Price: {{model.TotalPrice}}
+                Price: {{model.totalPrice}}
             </td>
 
             <td>
-                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.Id]">Edit</button>
-                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.Id]">Add Cart</button>
+                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.id]">Edit</button>
+                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.id]">Add Cart</button>
             </td>
         </tr>
     </tbody>

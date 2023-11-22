@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../services/order.service';
-import { Order } from './models/order.model';
+import { Order } from '../models/order.model';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,12 +16,11 @@ export class OrderListComponent implements OnInit {
     
   }
 
-
   orderList$? : Observable<Order[]>;
   
   ngOnInit(): void {
     this.orderList$ = this.orderService.getAllOrders();
-    console.log(this.orderList$)
+    console.log(this.orderList$);
   }
 
 }

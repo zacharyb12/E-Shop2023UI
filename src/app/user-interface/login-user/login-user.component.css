@@ -1,0 +1,17 @@
+.container{
+    border: 5px solid black;
+    width: 11rem;
+    height: 9rem;
+    text-align: center;
+    background-color: rgb(77, 77, 77);
+    font-size: 70%;
+}
+
+button{
+    font-size: 70%;
+}
+
+
+input{
+    background-color: lightblue;
+}
