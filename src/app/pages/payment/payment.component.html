@@ -1,0 +1,32 @@
+<h1>Payment</h1>
+
+<div class="mt-3">
+    <div class="mt-3">
+        <ng-container *ngIf="paymentList$ | async as paymentList">
+
+            <table>
+
+                <thead>
+                  <th>Id</th>
+                  <th>Order Id</th>
+                  <th>User Id</th>
+                  <th>Date</th>
+                  <th>Validation</th>
+                  <th>Ammount</th>
+                  </thead>
+
+                  <tr *ngFor="let payment of paymentList">
+                    <td>{{payment.id}}</td>
+                    <td>{{payment.orderId}}</td>
+                    <td>{{payment.userId}}</td>
+                    <td>{{payment.paymentDate}}</td>
+                    <td>{{payment.paymentValidation}}</td>
+                    <td>{{payment.amount}}</td>
+                  </tr>
+
+            </table>
+
+        </ng-container>
+        
+    </div>
+</div>

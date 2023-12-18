@@ -17,7 +17,7 @@
                 Id: {{model.id}}
             </td>
             <td>
-                Category: {{modelProduct.categoryId}}
+                Category: {{modelProduct.categoryName}}
             </td>
             <td>
                 Name: {{modelProduct.name}}
@@ -32,7 +32,7 @@
                 Review: {{model.reviewText}}
             </td>
             <td>
-                <img [src]="modelProduct.imagePath" alt="" class="product-img">
+                <img [src]="modelProduct.imagePath" alt="image Product" width="200px" class="product-img">
             </td>
             <td>
                 <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.id]">Edit</button>

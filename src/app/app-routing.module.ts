@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { GuardAuthGuard } from './component/AuthGuard/guard-auth.guard';
+
 import { ProductListComponent } from './pages/product/product-list/product-list.component';
 import { HomepageComponent } from './pages/home/homepage/homepage.component';
 import { ProductAddComponent } from './pages/product/product-add/product-add.component';
@@ -18,29 +21,39 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
 import { OrderAddComponent } from './pages/order/order-add/order-add.component';
 import { OrderDetailsComponent } from './pages/order/order-details/order-details.component';
 import { OrderUpdateComponent } from './pages/order/order-update/order-update.component';
-import { LoginUserComponent } from './user-interface/login-user/login-user.component';
+import { LoginUserComponent } from './component/AuthGuard/login-user/login-user.component';
+import { UserMenuComponent } from './user-interface/user-menu/user-menu.component';
+import { UserViewComponent } from './user-interface/user-view/user-view.component';
+import { FavoriteItemComponent } from './pages/favorite-item/favorite-item.component';
+import { DeliveryComponent } from './pages/delivery/delivery.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 
 const routes: Routes = [
-  { path: '' , component: HomepageComponent   },
-  { path: 'product/products', component: ProductListComponent},
-  { path: 'product/products-add' , component: ProductAddComponent},
-  { path: 'product/product-edit/:id' , component: ProductEditComponent},
-  { path: 'product/product-details/:id' , component: ProductDetailsComponent},
-  { path: 'categories/categories' , component: CategoriesListComponent},
-  { path: 'categories/categories-add' , component: CategoriesAddComponent},
-  { path: 'categories/categories-edit/:id' , component: CategoriesEditComponent},
-  { path: 'cart/cart-list' , component: CartListComponent},
-  { path: 'order/order-list' , component: OrderListComponent},
-  { path: 'order/order-add' , component: OrderAddComponent},
-  {path : 'order/order-details/:id' , component: OrderDetailsComponent},
-  {path : 'order/order-update/:id' , component: OrderUpdateComponent},
-  { path: 'product-review/product-review-list' , component: ProductReviewListComponent},
-  { path: 'user/user-list' , component: UserListComponent},
-  { path: 'user/user-add' , component: UserAddComponent},
+  { path: '' , component:     HomepageComponent },
+  { path: 'product/products', component: ProductListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'product/products-add' , component: ProductAddComponent, canActivate: [GuardAuthGuard]},
+  { path: 'product/product-edit/:id' , component: ProductEditComponent, canActivate: [GuardAuthGuard]},
+  { path: 'product/product-details/:id' , component: ProductDetailsComponent, canActivate: [GuardAuthGuard]},
+  { path: 'categories/categories' , component: CategoriesListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'categories/categories-add' , component: CategoriesAddComponent, canActivate: [GuardAuthGuard]},
+  { path: 'categories/categories-edit/:id' , component: CategoriesEditComponent, canActivate: [GuardAuthGuard]},
+  { path: 'cart/cart-list' , component: CartListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'order/order-list' , component: OrderListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'order/order-add' , component: OrderAddComponent, canActivate: [GuardAuthGuard]},
+   {path : 'order/order-details/:id' , component: OrderDetailsComponent, canActivate: [GuardAuthGuard]},
+  { path : 'order/order-update/:id' , component: OrderUpdateComponent, canActivate: [GuardAuthGuard]},
+  { path: 'product-review/product-review-list' , component: ProductReviewListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'user/user-list' , component: UserListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'user/user-add' , component: UserAddComponent, canActivate: [GuardAuthGuard]},
   { path: 'user/user-update/:id' , component: UserUpdateComponent},
   { path: 'user/user-details/:id' , component: UserDetailsComponent},
-  {path : 'user/login-user' , component: LoginUserComponent},
+  { path : 'user/login-user' , component: LoginUserComponent},
+  { path : 'user-interface/user-menu' , component: UserMenuComponent},
+  { path : 'user-interface/user-view' , component: UserViewComponent , canActivate: [GuardAuthGuard]},
+  { path : 'favorite-item/favorite-item', component: FavoriteItemComponent, canActivate: [GuardAuthGuard]},
+  { path : 'delivery/delivery', component: DeliveryComponent, canActivate: [GuardAuthGuard]},
+  { path : 'payment/payment', component: PaymentComponent, canActivate: [GuardAuthGuard]},
 
 ];
 

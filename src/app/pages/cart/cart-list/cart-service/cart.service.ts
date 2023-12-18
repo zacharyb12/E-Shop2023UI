@@ -38,7 +38,7 @@ export class CartService {
     )
   }
 
-  updateCartItemQuantity(id: number, newQuantity: number): Observable<CartItem> {
+  updateCartItemQuantity(id: string, newQuantity: number): Observable<CartItem> {
     const updateCategoryRequest = { quantity: newQuantity };
     return this.http.put<CartItem>(`${environment.apiBaseUrl}/api/CartItem/${id}`, updateCategoryRequest);
   }

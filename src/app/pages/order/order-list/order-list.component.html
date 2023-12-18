@@ -1,5 +1,9 @@
 <h1>Order</h1>
 
+<div id="add">
+  <button id="add" [routerLink]="['/order/order-add']" class="btn btn-primary">Add Order</button>
+</div>
+
 <ng-container *ngIf="orderList$ | async as orders">
   <div class="container-product">
     <table>

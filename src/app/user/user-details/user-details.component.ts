@@ -1,47 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user-services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../models/user.model';
+import { AuthService } from 'src/app/component/AuthGuard/auth.service';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.css']
 })
-export class UserDetailsComponent {
+export class UserDetailsComponent implements OnInit {
 
-  model : User;
-  
-  id : string | null = null;
-  
+  model?: User;
+
   constructor(
     private userService: UserService,
     private router: Router,
-    private route: ActivatedRoute
-    ){    
-      this.model = {
+    private route: ActivatedRoute,
+    private authService: AuthService
+  ) {
+    this.model = {
       id: '',
-    lastname: '',
-    firstName: '',
-    email: '',
-    password: '',
-    address: '',
-    cartItems : [],
-    favoriteItems: [],
-    status : 'user',
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      status: '',
+      address: '',
+    };
   }
-}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    
-    if (this.id) {
-          this.userService.getUserById(this.id).subscribe((user) => {
-            this.model = user;
-  
-          });
-    
-  
-    }
-}
+    if(this.authService.userId$){
+      this.authService.userId$.subscribe((userId) => {
+        if (userId) {
+          // Assuming getUserById returns an Observable<User>
+          this.userService.getUserById(userId).subscribe(
+            (user: User) => {
+              this.model = user;
+            },
+            error => {
+              console.error('Error fetching user details:', error);
+            }
+            );
+          }
+        });
+      }
+  }
 }

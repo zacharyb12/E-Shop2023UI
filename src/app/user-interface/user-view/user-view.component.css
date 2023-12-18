@@ -1,0 +1,34 @@
+ *{
+    border: 2px solid red;
+} 
+
+h1{
+    width: 30rem;
+    text-align: center;
+    margin: 3rem auto;
+    
+}
+
+#searchZone{
+    background-color: white;
+    width: 35rem;
+    height: auto;
+    margin: 0 auto auto 5rem;
+    overflow-y: scroll;
+}
+
+#containerRight{
+    background-color: rgba(255, 255, 255, 0.494);
+    margin: 10rem 0 auto auto;
+}
+
+#nameProductSearch{
+    width: 8rem;
+    float: left;
+    
+}
+#imgProductSearch{
+    width: 6rem;
+    float: right;
+    margin: 0 7rem 0 0;
+}

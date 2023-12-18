@@ -1,6 +1,6 @@
 export interface UpdateOrder {
     
-    id : number;
+    id : string;
     userId : number;
     orderDate : Date;
     status : number;

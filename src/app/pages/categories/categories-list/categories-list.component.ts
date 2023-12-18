@@ -18,11 +18,7 @@ export class CategoriesListComponent {
     this.categories$ = this.categoryService.getCategories();
     
     this.categories$.subscribe(categories => {
-      console.log('Products from API:', categories);
-      if (categories && categories.length > 0) {
-        console.log(categories[0].name);
-        console.log(categories[0].id);
-      }
+      
     });
   }
 }

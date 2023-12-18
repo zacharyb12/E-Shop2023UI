@@ -28,12 +28,14 @@ export class ProductDetailsComponent implements OnInit {
     private route: ActivatedRoute
   ) {  
     this.modelProduct = {
-      id : 0,
+      id : '',
       name : '',
       price : 0,
       imagePath : '',
-      categoryId : '',
+      categoryName : '',
       description : '',
+      rating : 0,
+      stockQuantity : 0
     }
     this.model = {
       id: 0,
@@ -57,9 +59,11 @@ export class ProductDetailsComponent implements OnInit {
       this.productReviewService.getProductReviewById(this.id).subscribe((ProductReview) => {
         this.model = ProductReview;
       });
+      }
     }
-
-
   }
-}
+
+  deleteProduct(productId: string): void {
+    this.productService.deleteProduct(productId);
+  }
 }

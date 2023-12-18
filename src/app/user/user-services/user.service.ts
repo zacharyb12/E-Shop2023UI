@@ -12,9 +12,12 @@ import { loginUser } from '../models/login-user.model';
 })
 export class UserService {
 
-  constructor(
-    private http: HttpClient,
+
+
+constructor(
+  private http: HttpClient,
   ) { }
+
 
   getAllUsers() {
     return this.http.get<User[]>(`${environment.apiBaseUrl}/api/User`);

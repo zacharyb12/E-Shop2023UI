@@ -18,7 +18,6 @@ export class OrderAddComponent {
   private router : Router
   ) {  
     this.model = {
-      id : '',
       userId : '',
       orderDate : new Date(),
       status : '',

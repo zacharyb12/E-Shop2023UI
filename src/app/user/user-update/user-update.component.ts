@@ -24,11 +24,11 @@ export class UserUpdateComponent {
   ) {  
     this.model = {
       id : '',
-      lastname : '',
+      lastName : '',
       firstName : '',
       email : '',
       password : '',
-      status : 'admin',
+      status : 'user',
       address : '',
 
     }

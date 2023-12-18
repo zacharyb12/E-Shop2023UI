@@ -1,67 +1,95 @@
 #navbar{
-    height: 12rem;
+    height: 10rem;
+    width: 100%;
 }
 
 #logoUser {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin: 4rem auto auto 0;
+    margin: 2.5rem 5rem auto auto;
     width: 20%;
-    height: 6rem;
-    float: left;
+    height: 5rem;
+    float: right;
+    position: relative;
 }
 
 .logo {
     margin: 1rem 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
-img{
+#img{
     width: 3rem;
     height: 3rem;
+    position: relative;
 }
 
 #loginUser{
-    display: flex;
-    flex-wrap: wrap;
     float: right;
-    margin: 1rem 5rem auto auto;
-    height: 10%;
-    width: 14%;
+    margin: 0.5rem 3rem auto auto;
+    height: auto;
+    width: 17rem;
+    position: relative;
+}
+
+#logout{
+    color:black;
+    margin: 1.4rem auto 0 auto;
+
 }
 
 #title {
     width: 30%;
-    margin: 1rem auto 2rem auto;
+    margin: 3rem auto 2rem auto;
+
+
 }
 
-h3, h5 {
-    width: 80%;
-    margin: 0.5rem auto;
-    height: 4rem;
+h3{
+    padding-top: 1.5rem;
+    width: auto;
+    margin: 0rem auto 0 auto;
+    height: 5rem;
+}
+
+h5{
+    width: auto;
+    margin: 1rem auto 0 auto;
+    height: 5rem;
 }
 
 #link {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80rem;
-    margin: 2.5rem auto;
+    width: 25rem;
+    margin: -6rem auto 0 3rem;
+
+
+}
+
+a{
+    color: white;
 }
 
 .nav-link {
     background-color: white;
     text-align: center;
-    width: 9rem;
+    width: 6rem;
     height: 2rem;
-    margin: 0 auto;
+    margin: -3.5rem 0.5rem;
     text-decoration: none;
     list-style: none;
     border-radius: 10%;
     border: 2px solid black;
+
+}
+
+li{
+    list-style: none;
+}
+
+#menuAdmin{
+
 }
 
 

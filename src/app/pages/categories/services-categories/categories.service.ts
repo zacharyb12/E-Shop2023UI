@@ -22,7 +22,11 @@ export class Categoryservices {
 
  // Méthode pour obtenir une catégorie par son ID
  getCategoryById(id: string): Observable<Category> {
-  return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/${id}`);
+  return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/id?id=${id}`);
+}
+
+getCategoryByName(name: string): Observable<Category> {
+  return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/${name}`);
 }
 
 addProduct(model: AddCategory): Observable<void> {
@@ -31,7 +35,7 @@ addProduct(model: AddCategory): Observable<void> {
 
 // Méthode pour mettre à jour une catégorie
 updateCategory(id: string, category: UpdateCategory): Observable<Category> {
-  return this.http.put<Category>(`${environment.apiBaseUrl}/api/Category/${id}`, category);
+  return this.http.post<Category>(`${environment.apiBaseUrl}/api/Category/${id}`, category);
 }
 
 // Méthode pour supprimer une catégorie

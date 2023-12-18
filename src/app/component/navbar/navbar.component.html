@@ -1,65 +1,108 @@
 
 <div class="col bg-dark text-center" id="navbar" data-bs-theme="dark">
-  
-  <div class="container s4" id="logoUser">
-      <a class="logo" href="user/user-details/{id}">
-        <img src="assets/images/man.png" alt="Mon Logo" width="50" height="50">
-      </a>
-      
-      <a class="logo" href="/cart/cart-list">
-        <img src="assets/images/cart.png" alt="Mon Logo" width="50">
-      </a>
-      
-      <a class="logo" href="#">
-        <img src="assets/images/options.png" alt="Mon Logo" width="50">
-      </a>
+  <div *ngIf="isConnected" class="container s4" id="logoUser">
+
+
+    <i class="bi bi-star-fill"></i>
+
+    <a class="logo" [routerLink]="['user/user-details/${userId$}']">
+      <img id="img" src="assets/images/6065566.png" alt="Mon Logo" width="50" height="50">
+    </a>
+    
+    <a class="logo" href="/cart/cart-list">
+      <img id="img" src="assets/images/2067434.png" alt="Mon Logo" width="50">
+    </a>
+    
+    <a class="logo" href="/user-interface/user-menu">
+      <img id="img" src="assets/images/7184305.png" alt="Mon Logo" width="50">
+    </a>
+
+    <button id="logout" class="nav-link bg-danger" (click)="logout()"> Disconnect </button>
+
   </div>
 
-<div *ngIf="true">
-  <div class="container s4" id="loginUser">
-    <app-login-user></app-login-user>
-  </div>
-</div>
+
+    <div *ngIf="!isConnected" class="container s4" id="loginUser">
+      
+      <app-login-user></app-login-user>
+      
+    </div>
+  
   <div class="container s4" id="title">
+
     <h3 class="text-body-emphasis text-center">E-Shop2023</h3>
     <h5 class="text-body-emphasis text-center">Le Shop online de 2024</h5>
-  </div>
-
-  <div  id="link">
-
-        <a class="nav-link" href="#">
-          Home
-        </a>
-
-        <a  class="nav-link" href="/product/products">
-          Products
-        </a>
-
-        <a class="nav-link" href="/categories/categories">
-          Categories
-        </a>
-
-        <a class="nav-link" href="/order/order-list">
-          Order List
-        </a>
-
-        <a class="nav-link" href="/product-review/product-review-list">
-          Review List
-        </a>
-
-        <a class="nav-link" href="/user/user-list">
-          User List
-        </a>
-
-        <a class="nav-link" href="#">
-          autre
-        </a>
-
-        <a class="nav-link" href="#">
-          autre
-        </a>
-
-  </div>
-
+    
   </div>
   
+  <div  id="link">
+    
+    <a class="nav-link bg-black" href="#">
+      Home
+    </a>
+    
+    <a class="nav-link dropdown-toggle bg-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Menu
+    </a>
+    
+    <a  class="nav-link bg-black" href="/user-interface/user-view">
+      Acceuil User
+    </a>
+        
+        <li class="nav-item dropdown bg-black">
+          <ul class="dropdown-menu">
+            
+          <li>
+          <a class="dropdown-item" href="/categories/categories">
+            Categories
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="/product/products">
+            Products
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="/order/order-list">
+            Order List
+          </a>
+        </li>
+        
+        <li>
+          <a class="dropdown-item" href="/product-review/product-review-list">
+            Review List
+          </a>
+        </li>
+        
+        <li>
+          <a class="dropdown-item" href="/user/user-list">
+            User List
+          </a>
+        </li>
+        
+        <li>
+          <a class="dropdown-item" href="/favorite-item/favorite-item">
+            Favorite Item
+          </a>
+        </li>
+        
+        <li>
+          <a class="dropdown-item" href="/payment/payment">
+            Payment 
+          </a>
+        </li>
+        
+        <li>
+          <a class="dropdown-item" href="/delivery/delivery">
+            Delivery
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+  </div>
+</div>
+

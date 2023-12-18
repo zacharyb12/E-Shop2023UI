@@ -1,6 +1,6 @@
 export interface CartItem{
-id: number;
-userId:number;
-productId:number;
+id: string;
+userId:string;
+productId:string;
 quantity:number;
 }

@@ -20,7 +20,11 @@ export class Productservices {
   }
 
   getProductById(id: string): Observable<Product> {
-    return this.http.get<Product>(`${environment.apiBaseUrl}/api/Product/${id}`);
+    return this.http.get<Product>(`${environment.apiBaseUrl}/api/Product/id?id=${id}`);
+  }
+
+  getProductByCategoryName(name: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.apiBaseUrl}/api/Product/CategoryName?name=${name}`);
   }
 
 
@@ -28,13 +32,16 @@ export class Productservices {
     return this.http.post<void>(`${environment.apiBaseUrl}/api/Product`, model);//?addAuth=true
   }
 
-  updateProduct(id: string, updateCategoryRequest: UpdateProduct) : Observable<Product> {
-     return this.http.put<Product>(`${environment.apiBaseUrl}/api/Product/${id}`, //?addAuth=true
-    updateCategoryRequest,);
+  updateProduct(id: string, updateProduct: UpdateProduct) : Observable<Product> {
+     return this.http.put<Product>(`${environment.apiBaseUrl}/api/Product/id?id=${id}`, //?addAuth=true
+    updateProduct)
   }
 
-  deleteProduct(id: string) : Observable<Product> {
-    return this.http.delete<Product>(`${environment.apiBaseUrl}/api/Product/${id}`,//?addAuth=true 
-    )
+  updateProductInfo(product: UpdateProduct , info : string , id : string): Observable<Product> {
+    return this.http.put<Product>(`${environment.apiBaseUrl}/api/Product/${id}`, info=`${info}`);
+  }
+
+  deleteProduct(id: string) : void {
+    this.http.delete(`${environment.apiBaseUrl}/api/Product/id${id}`)//?addAuth=true 
   }
 }

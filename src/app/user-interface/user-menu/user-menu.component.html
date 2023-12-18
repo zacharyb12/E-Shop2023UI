@@ -1,0 +1,21 @@
+<h1>Your Options</h1>
+
+<div class="mt-03">
+    <ul>
+        <li>informations</li>
+        <li>Order</li>
+        <li>Review</li>
+        <li>bought item</li>
+        <li>Returned items</li>
+    </ul>
+</div>
+
+<div class="mt-03" id="sideRight">
+    <ng-container *ngIf="products$ | async as products" >
+        <div class="mt-03" *ngFor="let product of products">
+            <div>
+                {{product.imagePath}}
+            </div>
+        </div>
+    </ng-container>
+</div>

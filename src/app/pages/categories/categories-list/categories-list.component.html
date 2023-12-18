@@ -1,4 +1,8 @@
-<h1>Categories Options</h1>
+<h1>Category</h1>
+
+<div id="add">
+  <button id="btnAdd" [routerLink]="['/categories/categories-add']" class="btn btn-primary">Add Category</button>
+</div>
 
 <table *ngIf="categories$ | async as categories">
   <thead>
@@ -9,10 +13,6 @@
 
     <th>
       Name
-    </th>
-
-    <th>
-      <button [routerLink]="['/categories/categories-add']" class="btn btn-primary" id="addButton">Add Category</button>
     </th>
 
   </thead>

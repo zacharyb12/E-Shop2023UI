@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Productservices } from '../services-product/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UpdateProduct } from '../models-product/update-product.model';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription, observable } from 'rxjs';
+import { Categoryservices } from '../../categories/services-categories/categories.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -19,43 +20,46 @@ export class ProductEditComponent {
 
   constructor(
     private productService : Productservices,
+    private categoryService : Categoryservices,
     private router: Router,
     private route: ActivatedRoute
   ) {  
     this.model = {
-      name : '',
-      price : 0,
-      imagePath : '',
-      categoryId : '',
-      description : '',
+      name: '',
+      price: 0,
+      imagePath: '',
+      description: '',
+      stockQuantity: 0,
+      rating: 0,
+      categoryName: '',
 
     }
   }
   
 
   ngOnInit(): void {
+    console.log(this.model.categoryName);
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.productService.getProductById(this.id).subscribe((product) => {
         this.model = product;
+
       });
     }
   }
 
   onFormSubmit(): void {
-    if (this.model && this.id) {
+    if(this.id)
+    {
+
       this.productService.updateProduct(this.id, this.model).subscribe({
         next: (response) => {
           this.router.navigateByUrl('/product/products');
-        },
-        error: (error) => {
-          console.error('Update product failed:', error);
-          // Gérer l'erreur ici (par exemple, afficher un message à l'utilisateur)
         }
       });
     }
-  }
-
+    }
+    
   updateProductName()
   {
 
@@ -72,10 +76,11 @@ export class ProductEditComponent {
   }
 
 
-  deleteProduct(id: string): void {
-    this.productService.deleteProduct(id).subscribe({
-      
-    })
+  deleteProduct(): void {
+    if(this.id)
+    {
+      this.productService.deleteProduct(this.id);
+    }
   }
 
 

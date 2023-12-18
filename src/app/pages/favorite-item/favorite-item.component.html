@@ -1,0 +1,51 @@
+<div class="row container mt-5"></div>
+<h1>Favorite Item</h1>
+
+
+<div class="mt-3">
+  <div>
+    <h3>AddFavorite</h3>
+    <label>userId</label>
+    <input type="text" id="userId" class="form-control" name="userId" [(ngModel)]="model.userId">
+    <label>productId</label>
+    <input type="text" id="productId" class="form-control" name="productId" [(ngModel)]="model.productId">
+    <button type="submit" class="btn btn-primary" (click)="addFavoriteItem(model)">Add</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div id="containerleft"class="w-75 p-3 mt-5">
+
+      <div>
+          <button type="submit" class="btn btn-primary" (click)=" getFavoriteItem(userId)">Search</button>
+          <input type="text" id="userId" class="form-control" name="userId" [(ngModel)]="userId">
+      </div>
+
+      <div id="productContainer">
+        <ng-container *ngIf="product$ | async as products" >
+          <table >
+            <thead>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Picture</th>
+              <th>
+              </th>
+            </thead>
+            <tr *ngFor="let product of products">
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td><img [src]="product.imagePath" alt="" width="100px" class="product-img"></td>
+              <td>
+                
+                <button class="btn btn-primary" (click)="deleteFavoriteItem(this.userId,product.id)">delete</button>
+                <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-details', product.id]">show</button>
+              </td>
+            </tr>
+          </table>
+        </ng-container>
+      </div>
+        
+    </div>
+  </div>    
+</div>

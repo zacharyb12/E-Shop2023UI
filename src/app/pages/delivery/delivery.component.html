@@ -1,0 +1,30 @@
+<h1>Delivery</h1>
+
+<div class="mt-3">
+    <div class="mt-3">
+        <ng-container *ngIf="deliveryList$ | async as deliveryList">
+
+            <table>
+
+                <thead>
+                  <th>Id</th>
+                  <th>User Id</th>
+                  <th>Order Id</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  </thead>
+
+                  <tr *ngFor="let delivery of deliveryList">
+                    <td>{{delivery.id}}</td>
+                    <td>{{delivery.userId}}</td>
+                    <td>{{delivery.orderId}}</td>
+                    <td>{{delivery.status}}</td>
+                    <td>{{delivery.deliveryDate}}</td>
+                  </tr>
+
+            </table>
+
+        </ng-container>
+        
+    </div>
+</div>

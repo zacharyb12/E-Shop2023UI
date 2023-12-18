@@ -17,17 +17,19 @@ export class CartListComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.model = {
-      id : 1,
+      id : '',
       name : '',
       price : 0,
       imagePath : '',
-      categoryId : '',
+      rating : 0,
+      stockQuantity : 0,
+      categoryName : '',
       description : '',
     }
     this.cartItemModel  = {
-      id : 0,
-      userId : 0,
-      productId : 0,
+      id : '',
+      userId : '',
+      productId : '',
       quantity : 0,
     }
    }
@@ -39,10 +41,10 @@ export class CartListComponent implements OnInit {
   cartItemsArray: CartItem[] = [];
   cartProducts: Product[] = []; // Liste des produits du panier
 
+  
   ngOnInit(): void {
     this.cartService.getAllCartItem().subscribe((data) => {
       this.cartItemsArray = data;
-
 
       for (const cartItem of this.cartItemsArray) {
         this.productService.getProductById(cartItem.productId.toString()).subscribe((product) => {
@@ -60,7 +62,7 @@ export class CartListComponent implements OnInit {
     }
   }
 
-  addQuantity(id: number) {
+  addQuantity(id: string) {
 
     const cartItem = this.cartItemsArray.find((item) => item.productId === id);
 
@@ -73,7 +75,7 @@ export class CartListComponent implements OnInit {
     }
   }
 
-  removeQuantity(id: number) {
+  removeQuantity(id: string) {
     // Trouver l'élément correspondant dans le panier
     const cartItem = this.cartItemsArray.find((item) => item.productId === id);
 

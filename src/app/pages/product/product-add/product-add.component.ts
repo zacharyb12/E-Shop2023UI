@@ -20,9 +20,10 @@ export class ProductAddComponent {
       name : '',
       price : 0,
       imagePath : '',
-      categoryId : '',
+      categoryName : '',
       description : '',
-      stockQuantity: 0
+      stockQuantity: 0,
+      rating : 0,
     }
   }
 
