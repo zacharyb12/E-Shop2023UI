@@ -5,7 +5,7 @@
 
     <i class="bi bi-star-fill"></i>
 
-    <a class="logo" [routerLink]="['user/user-details/${userId$}']">
+    <a class="logo" [routerLink]="['user/user-details/'+ userIdStringNavbar]">
       <img id="img" src="assets/images/6065566.png" alt="Mon Logo" width="50" height="50">
     </a>
     
@@ -41,14 +41,20 @@
       Home
     </a>
     
+    
     <a class="nav-link dropdown-toggle bg-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Menu
     </a>
+
     
     <a  class="nav-link bg-black" href="/user-interface/user-view">
-      Acceuil User
+      Acceuil
     </a>
-        
+    
+    <a  class="nav-link bg-black" href="/product/product-user-view">
+      Product
+    </a>
+
         <li class="nav-item dropdown bg-black">
           <ul class="dropdown-menu">
             
@@ -106,3 +112,4 @@
   </div>
 </div>
 
+<div class="background-container" [ngClass]="wallpaperClass"></div>

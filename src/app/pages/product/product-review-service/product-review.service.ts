@@ -17,7 +17,8 @@ export class ProductReviewService {
     return this.http.get<ProductReview[]>(`${environment.apiBaseUrl}/api/ProductReview`);
   }
 
-  getProductReviewById(id: string): Observable<ProductReview> {
-    return this.http.get<ProductReview>(`${environment.apiBaseUrl}/api/ProductReview/${id}`);
+  getProductReviewById(id: string): Observable<ProductReview[]> {
+    return this.http.get<ProductReview[]>(`${environment.apiBaseUrl}/api/ProductReview/ProductId?id=${id}`);
   }
+
 }

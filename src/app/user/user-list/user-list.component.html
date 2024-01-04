@@ -17,20 +17,20 @@
       <th>Info</th>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users">
-            <td>{{user.id}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.firstName}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.password}}</td>
-            <td>{{user.status}}</td>
-            <td>{{user.address}}</td>
-          
-            <td>
-              <a class="btn btn-primary" id="btn" [routerLink]="['/user/user-details', user.id]">show</a>
-            </td>
+      <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.status}}</td>
+          <td>{{user.address}}</td>
+        
+          <td>
+            <a class="btn btn-primary" id="btn" [routerLink]="['/user/user-details', user.id]">show</a>
+          </td>
 
-        </tr>
+      </tr>
     </tbody>
   </table>
 </ng-container>

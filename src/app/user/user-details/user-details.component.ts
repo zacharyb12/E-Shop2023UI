@@ -13,40 +13,43 @@ import { switchMap } from 'rxjs/operators';
 })
 export class UserDetailsComponent implements OnInit {
 
-  model?: User;
+  model: User;
+  userId: string  = this.authService.userIdString;
 
   constructor(
     private userService: UserService,
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService
-  ) {
-    this.model = {
-      id: '',
+    ) {
+      this.model = {
+        id: '',
       firstName: '',
       lastName: '',
       email: '',
       password: '',
       status: '',
       address: '',
+      
     };
   }
 
-  ngOnInit(): void {
-    if(this.authService.userId$){
-      this.authService.userId$.subscribe((userId) => {
-        if (userId) {
-          // Assuming getUserById returns an Observable<User>
-          this.userService.getUserById(userId).subscribe(
-            (user: User) => {
-              this.model = user;
-            },
-            error => {
-              console.error('Error fetching user details:', error);
-            }
-            );
-          }
-        });
-      }
-  }
+  ngOnInit() {
+    let user = this.userService.getUserById(this.userId).subscribe((user) => {
+      this.model.id = user.id;
+      this.model.lastName = user.lastName;
+      this.model.firstName = user.firstName;
+      this.model.email = user.email;
+      this.model.password = user.password;
+      this.model.status = user.status;
+      this.model.address = user.status;
+
+    });
+
+    }
+
+          
+        
+      
+  
 }

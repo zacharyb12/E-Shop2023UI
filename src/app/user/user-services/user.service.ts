@@ -19,8 +19,8 @@ constructor(
   ) { }
 
 
-  getAllUsers() {
-    return this.http.get<User[]>(`${environment.apiBaseUrl}/api/User`);
+  getAllUsers(): Observable<User[]>{
+    return this.http.get<User[]>(`${environment.apiBaseUrl}/api/User`)
   }
 
   getUserById(id: string): Observable<User> {

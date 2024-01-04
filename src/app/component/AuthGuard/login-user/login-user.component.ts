@@ -22,11 +22,12 @@ export class LoginUserComponent {
   login() {
     this.authService.login(this.model).subscribe(
       (response) => {
-        // La navigation peut être effectuée ici ou vous pouvez réagir à userId$ dans ngOnInit
-        this.router.navigate(['#']);
+        this.router.navigate(['/user/user-view']);
       },
       (error) => {
         console.error('Login failed:', error);
+        this.router.navigate(['']);
+
       }
     );
   }

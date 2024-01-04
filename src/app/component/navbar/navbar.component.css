@@ -1,7 +1,17 @@
 #navbar{
     height: 10rem;
     width: 100%;
+    position: sticky;
 }
+
+/* .background-container {
+    background: url('./src/app/component/navbar/images/noel.png') fixed no-repeat top right;
+}
+
+.noel-bg {
+    background: url('./src/app/component/navbar/images/noel.png') fixed no-repeat top right;
+} */
+
 
 #logoUser {
     display: flex;
@@ -61,7 +71,7 @@ h5{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 25rem;
+    width: 35rem;
     margin: -6rem auto 0 3rem;
 
 
@@ -87,12 +97,3 @@ a{
 li{
     list-style: none;
 }
-
-#menuAdmin{
-
-}
-
-
-/* * {
-    border: 5px solid red;
-} */

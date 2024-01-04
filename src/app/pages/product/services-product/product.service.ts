@@ -15,12 +15,14 @@ export class Productservices {
     private http : HttpClient,
   ) { }
 
-  getAllProducts() {
+  getAllProducts(): Observable<Product[]> { 
     return this.http.get<Product[]>(`${environment.apiBaseUrl}/api/Product`);
-  }
+  
+}
 
   getProductById(id: string): Observable<Product> {
     return this.http.get<Product>(`${environment.apiBaseUrl}/api/Product/id?id=${id}`);
+    
   }
 
   getProductByCategoryName(name: string): Observable<Product[]> {

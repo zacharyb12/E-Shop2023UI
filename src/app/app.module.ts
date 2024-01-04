@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/home/homepage/homepage.component';
 import { ProductListComponent } from './pages/product/product-list/product-list.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductAddComponent } from './pages/product/product-add/product-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,6 +33,9 @@ import { UserViewComponent } from './user-interface/user-view/user-view.componen
 import { FavoriteItemComponent } from './pages/favorite-item/favorite-item.component';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { ProductByCategoryComponent } from './pages/product/product-by-category/product-by-category.component';
+import { ProductUserViewComponent } from './pages/product/product-user-view/product-user-view.component';
+import { TokenInterceptor } from './component/AuthGuard/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,9 @@ import { PaymentComponent } from './pages/payment/payment.component';
     UserViewComponent,
     FavoriteItemComponent,
     DeliveryComponent,
-    PaymentComponent
+    PaymentComponent,
+    ProductByCategoryComponent,
+    ProductUserViewComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,9 @@ import { PaymentComponent } from './pages/payment/payment.component';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

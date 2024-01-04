@@ -2,6 +2,7 @@
     border: red 5px solid;
 } */
 
+
 a{
     padding: 1rem;
 }
@@ -32,13 +33,20 @@ h1{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    width: auto;
-    margin: 2rem 10rem 0 10rem;
+    width: 80rem;
+    margin: 2rem auto 0 auto;
+}
+
+#imgCategoriesCentrerZone{
+    display: flex;
+    flex-wrap: wrap;
+    width: 67em;
+    margin: 1rem auto 1rem auto;
 }
 
 #imgCategoryPictures{
-    margin: 4rem 0.5rem 1rem 0.5rem;
-    width: 10rem;
+    margin: 4rem auto 1rem auto;
+    width: auto;
     display: wrap;
     flex-wrap: wrap;
 }
@@ -51,15 +59,11 @@ li{
 #imgCategorieslink{
     border: 5px solid red;
     padding: 5px;
-    margin: auto;
+    margin: 1rem auto;
 }
 
 .categoryName{
     text-align: center;
     width : 50%;
     margin:  0 auto;
-
-
 }
-
-

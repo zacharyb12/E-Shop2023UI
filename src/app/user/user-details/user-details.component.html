@@ -2,36 +2,36 @@
     <table [(ngModel)]="model" class="container" class="table table-hover">
         <tr>
             <th>Id:</th>
-            <td> {{model?.id}}</td>
+            <td> {{model.id}}</td>
         </tr>
         <tr>
             <th>LastName: </th>
-            <td> {{model?.lastName}} </td>
+            <td> {{model.lastName}} </td>
         </tr>
         <tr>
             <th>FirstName:</th>
-            <td>{{model?.firstName}} </td>
+            <td>{{model.firstName}} </td>
         </tr>
         <tr>
             <th>Email:</th>
-            <td>{{model?.email}} </td>
+            <td>{{model.email}} </td>
         </tr>
         <tr>
             <th>Password: </th>
-            <td> {{model?.password}} </td>
+            <td> {{model.password}} </td>
         </tr>
         <tr>
             <th> Status: </th>
-            <td>{{model?.status}} </td>
+            <td>{{model.status}} </td>
         </tr>
         <tr>
             <th> Adresse: </th>
-            <td> {{model?.address}}</td>
+            <td> {{model.address}}</td>
         </tr>
         
         <tr>
             <th>
-                <a class="btn btn-primary" id="btn" [routerLink]="['/user/user-update', model?.id]">Edit</a>
+                <a class="btn btn-primary" id="btn" [routerLink]="['/user/user-update', model.id]">Edit</a>
             </th>
         </tr>
     </table>

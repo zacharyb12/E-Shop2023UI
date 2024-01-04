@@ -25,13 +25,11 @@ export class UserViewComponent  implements OnInit {
   products$? : Observable<Product[]>;
   searchProducts$? : Observable<Product[]>;
   productsReview$? : Observable<ProductReview[]>;
-  cartItem$? : Observable<CartItem[]>;
 
   
   ngOnInit(): void {
     this.products$ = this.productService.getAllProducts();
     this.productsReview$ = this.productReviewService.getAllProductsReview();
-    this.cartItem$ = this.cartService.getAllCartItem();
     
   }
 

@@ -1,34 +1,124 @@
- *{
+ /* *{
     border: 2px solid red;
-} 
+}   */
 
 h1{
     width: 30rem;
     text-align: center;
     margin: 3rem auto;
-    
+    background-color: white;
+    border-radius: 0 0 20% 20%;
 }
 
+#search{
+    margin: 0 auto;
+    width: 40rem;
+}
+
+#input{
+height: 30px;
+width: 550px;
+}
+
+
 #searchZone{
-    background-color: white;
-    width: 35rem;
+    background-color: rgb(255, 255, 255);
+    width: 60rem;
     height: auto;
-    margin: 0 auto auto 5rem;
+    margin: 0 auto ;
     overflow-y: scroll;
 }
 
 #containerRight{
     background-color: rgba(255, 255, 255, 0.494);
-    margin: 10rem 0 auto auto;
+    margin: 3rem 0 auto auto;
+    text-align: center;
+    border-radius: 10% 0 0 10% ;
 }
 
-#nameProductSearch{
-    width: 8rem;
-    float: left;
-    
+#Container{
+    width: 60rem;
 }
 #imgProductSearch{
-    width: 6rem;
+    width: 13rem;
     float: right;
-    margin: 0 7rem 0 0;
+    margin: 1rem 5rem 0 0;
+}
+
+#itemContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60rem;
+    margin: auto;
+    background-color:rgba(0, 0, 0, 0.242);
+    border: 2px solid black;
+}
+
+#itemList{
+    width: 26rem;
+    height: 18rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.456);
+    
+}
+
+#itemProduct{
+    width: 40rem;
+}
+
+#textProduct{
+    border: 2px solid black;
+    float: left;
+    margin: 1rem 1rem;
+    width: 13rem;
+    height: 13rem;
+    background-color: white;
+}
+
+#productTitle{
+    background-color: black;
+    color: white;
+    width: 90%;
+    margin: 0.5rem auto;
+    text-align: center;
+}
+
+#productDescription{
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.073);
+    width: 90%;
+    margin: auto auto 0.5rem auto;
+}
+
+#paragraphProduct{
+    overflow: scroll;
+    height: 13rem;
+}
+
+#productPrice{
+    width: 4rem;
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+    margin: 1rem auto 0 3.5rem;
+}
+#imageProduct{
+    float: right;
+    width: 11rem;
+    height: 10rem;
+    margin: -17rem -12rem 0 0;
+    border: 2px solid black;
+    overflow: scroll;
+
+}
+#buttonProduct{
+    width: 12rem;
+    height: 4rem;
+    margin: -3rem -12rem auto auto;
+}
+#btn{
+    height: 2.5rem;
+    margin: 0.5rem 0.5rem;
 }

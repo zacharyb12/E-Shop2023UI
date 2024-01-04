@@ -1,0 +1,35 @@
+<h1>Product</h1>
+
+    <div id="itemContainer" *ngIf="products | async as products" >
+        <div id="itemList" *ngFor="let product of products">
+
+            
+
+                <div id="textProduct">
+                    <p>
+
+                    {{product.name}}
+                    <br>
+                    
+                    {{product.description}}
+                    
+                </p>
+                    <div id="productPrice">
+                        {{product.price}}€
+                    </div>
+
+                    <div id="buttonProduct">
+                        <button class="btn btn-primary" id="btn">Add Cart</button>
+                        <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-details/'+ product.id]">show</button>
+                    </div>
+
+                <div id="imageProduct">
+                    <img [src]="product.imagePath" alt="" width="150px" class="{{product.name}}">
+                </div>
+
+
+            </div>
+        </div>
+        
+    </div>
+ 

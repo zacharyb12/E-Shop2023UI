@@ -25,6 +25,7 @@ export class Categoryservices {
   return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/id?id=${id}`);
 }
 
+ // Méthode pour obtenir une catégorie par son 
 getCategoryByName(name: string): Observable<Category> {
   return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/${name}`);
 }

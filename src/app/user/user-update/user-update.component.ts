@@ -15,7 +15,6 @@ export class UserUpdateComponent {
 
   id : string | null = null;
 
-  updateProductSubscription?: Subscription;
 
   constructor(
     private userService : UserService,
@@ -39,8 +38,10 @@ export class UserUpdateComponent {
     this.id = this.route.snapshot.paramMap.get('id');
     
     if (this.id) {
-      this.userService.updateUser(this.id, this.model).subscribe((user) => {
+      this.userService.getUserById(this.id).subscribe((user) => {
         this.model = user;
+        console.log(this.model.lastName);
+        
       });
     }
   }

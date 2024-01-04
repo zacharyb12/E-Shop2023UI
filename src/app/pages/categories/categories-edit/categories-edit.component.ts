@@ -52,15 +52,16 @@ export class CategoriesEditComponent {
   }
 
   delete(id : string): void {
-    this.categoriesService.deleteCategory(id)
-    .subscribe({
-      next: (response) => {
-        this.router.navigateByUrl('/categories/categories');
-      },
-      error: (error) => {
-        console.error('Category Deleted failed:', error);
-        
-      }
-    });
-  }
+      this.categoriesService.deleteCategory(id).subscribe({
+
+        next: (response) => {
+          this.router.navigateByUrl('/categories/categories');
+        },
+        error: (error) => {
+          console.error('Category Deleted failed:', error);
+          
+        }
+      });
+    }
+  
 }

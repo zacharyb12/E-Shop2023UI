@@ -4,6 +4,7 @@ import { Productservices } from '../../product/services-product/product.service'
 import { CartItem } from './cart-service/models-cart/cart-item.model';
 import { CartService } from './cart-service/cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/component/AuthGuard/auth.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -14,7 +15,8 @@ export class CartListComponent implements OnInit {
   constructor(
     private productService: Productservices,
     private cartService: CartService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService
   ) {
     this.model = {
       id : '',
@@ -43,24 +45,19 @@ export class CartListComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.cartService.getAllCartItem().subscribe((data) => {
-      this.cartItemsArray = data;
-
+    this.cartService.getCartItemsByUserId(this.authService.userIdString).subscribe((data) => {
+      // Assurez-vous que data est toujours un tableau, même si un seul élément est retourné
+      this.cartItemsArray = Array.isArray(data) ? data : [data];
+    
+      // Pour chaque élément du panier, récupérer le produit associé
       for (const cartItem of this.cartItemsArray) {
-        this.productService.getProductById(cartItem.productId.toString()).subscribe((product) => {
-          this.cartProducts.push(product);
+        this.productService.getProductById(cartItem.productId.toString()).subscribe((cartProduct) => {
+          // Ajouter le produit associé à la liste des produits du panier
+          this.cartProducts.push(cartProduct);
         });
       }
     });
-
-    this.id = this.route.snapshot.paramMap.get('id')?.toString();
-    if (this.id) {
-      this.productService.getProductById(this.id.toString()).subscribe((product) => {
-        this.model = product;
-        this.cartProducts.push(product); 
-      });
     }
-  }
 
   addQuantity(id: string) {
 

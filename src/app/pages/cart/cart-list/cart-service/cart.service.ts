@@ -17,10 +17,10 @@ export class CartService {
     return this.http.get<CartItem[]>(`${environment.apiBaseUrl}/api/CartItem`);
   }
 
-  getCartItemById(id: string) : Observable<CartItem> {
-   var cartItem =  this.http.get<CartItem>(`${environment.apiBaseUrl}/api/CartItem/${id}`);
-   return cartItem;
+  getCartItemsByUserId(id: string): Observable<CartItem[]> {
+    return this.http.get<CartItem[]>(`${environment.apiBaseUrl}/api/CartItem/${id}`);
   }
+  
 
 
   addCartItem(model: CartItem): Observable<void> {

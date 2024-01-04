@@ -27,30 +27,34 @@ import { UserViewComponent } from './user-interface/user-view/user-view.componen
 import { FavoriteItemComponent } from './pages/favorite-item/favorite-item.component';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { ProductByCategoryComponent } from './pages/product/product-by-category/product-by-category.component';
+import { ProductUserViewComponent } from './pages/product/product-user-view/product-user-view.component';
 
 
 const routes: Routes = [
   { path: '' , component:     HomepageComponent },
-  { path: 'product/products', component: ProductListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'product/products', component: ProductListComponent},
   { path: 'product/products-add' , component: ProductAddComponent, canActivate: [GuardAuthGuard]},
   { path: 'product/product-edit/:id' , component: ProductEditComponent, canActivate: [GuardAuthGuard]},
-  { path: 'product/product-details/:id' , component: ProductDetailsComponent, canActivate: [GuardAuthGuard]},
-  { path: 'categories/categories' , component: CategoriesListComponent, canActivate: [GuardAuthGuard]},
+  { path: 'product/product-details/:id' , component: ProductDetailsComponent , canActivate: [GuardAuthGuard]},
+  { path: 'product/product-byCategory/:category' , component: ProductByCategoryComponent},
+  { path: 'product/product-user-view' , component: ProductUserViewComponent},
+  { path: 'categories/categories' , component: CategoriesListComponent ,  canActivate: [GuardAuthGuard]},
   { path: 'categories/categories-add' , component: CategoriesAddComponent, canActivate: [GuardAuthGuard]},
   { path: 'categories/categories-edit/:id' , component: CategoriesEditComponent, canActivate: [GuardAuthGuard]},
   { path: 'cart/cart-list' , component: CartListComponent, canActivate: [GuardAuthGuard]},
   { path: 'order/order-list' , component: OrderListComponent, canActivate: [GuardAuthGuard]},
   { path: 'order/order-add' , component: OrderAddComponent, canActivate: [GuardAuthGuard]},
-   {path : 'order/order-details/:id' , component: OrderDetailsComponent, canActivate: [GuardAuthGuard]},
+   {path : 'order/order-details/:id' , component: OrderDetailsComponent},
   { path : 'order/order-update/:id' , component: OrderUpdateComponent, canActivate: [GuardAuthGuard]},
   { path: 'product-review/product-review-list' , component: ProductReviewListComponent, canActivate: [GuardAuthGuard]},
   { path: 'user/user-list' , component: UserListComponent, canActivate: [GuardAuthGuard]},
   { path: 'user/user-add' , component: UserAddComponent, canActivate: [GuardAuthGuard]},
-  { path: 'user/user-update/:id' , component: UserUpdateComponent},
-  { path: 'user/user-details/:id' , component: UserDetailsComponent},
+  { path: 'user/user-update/:id' , component: UserUpdateComponent , canActivate: [GuardAuthGuard]},
+  { path: 'user/user-details/:id' , component: UserDetailsComponent , canActivate: [GuardAuthGuard]},
   { path : 'user/login-user' , component: LoginUserComponent},
-  { path : 'user-interface/user-menu' , component: UserMenuComponent},
-  { path : 'user-interface/user-view' , component: UserViewComponent , canActivate: [GuardAuthGuard]},
+  { path : 'user-interface/user-menu' , component: UserMenuComponent , canActivate: [GuardAuthGuard]},
+  { path : 'user-interface/user-view' , component: UserViewComponent},
   { path : 'favorite-item/favorite-item', component: FavoriteItemComponent, canActivate: [GuardAuthGuard]},
   { path : 'delivery/delivery', component: DeliveryComponent, canActivate: [GuardAuthGuard]},
   { path : 'payment/payment', component: PaymentComponent, canActivate: [GuardAuthGuard]},

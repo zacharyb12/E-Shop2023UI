@@ -15,6 +15,8 @@ export class ProductEditComponent {
   model : UpdateProduct;
 
   id : string | null = null;
+  
+  categoryId = '';
 
   updateProductSubscription?: Subscription;
 
@@ -25,33 +27,33 @@ export class ProductEditComponent {
     private route: ActivatedRoute
   ) {  
     this.model = {
+      id : '',
       name: '',
       price: 0,
       imagePath: '',
       description: '',
       stockQuantity: 0,
-      rating: 0,
       categoryName: '',
-
+      rating: 0,
     }
   }
   
 
-  ngOnInit(): void {
-    console.log(this.model.categoryName);
-    this.id = this.route.snapshot.paramMap.get('id');
-    if (this.id) {
-      this.productService.getProductById(this.id).subscribe((product) => {
-        this.model = product;
+ngOnInit(): void {
+  this.id = this.route.snapshot.paramMap.get('id');
+  console.log(this.id);
+  
+  if (this.id) {
+    this.productService.getProductById(this.id).subscribe((product) => {
+      this.model = product;
 
       });
     }
   }
 
-  onFormSubmit(): void {
+onFormSubmit(): void {
     if(this.id)
     {
-
       this.productService.updateProduct(this.id, this.model).subscribe({
         next: (response) => {
           this.router.navigateByUrl('/product/products');
@@ -59,24 +61,8 @@ export class ProductEditComponent {
       });
     }
     }
-    
-  updateProductName()
-  {
 
-  }
-
-  updateProductPrice()
-  {
-
-  }
-
-  updateProductDescription()
-  {
-
-  }
-
-
-  deleteProduct(): void {
+deleteProduct(): void {
     if(this.id)
     {
       this.productService.deleteProduct(this.id);

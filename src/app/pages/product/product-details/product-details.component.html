@@ -3,7 +3,6 @@
 
 <table>
     <thead>
-        <th>Id</th>
         <th>Category</th>
         <th>Name</th>
         <th>Description</th>
@@ -11,32 +10,34 @@
         <th>Review</th>
         <th>Pictures</th>
     </thead>
-    <tbody>
+    <tbody *ngIf="modelProduct && model">
         <tr>
             <td>
-                Id: {{model.id}}
+            {{modelProduct.categoryName}}
             </td>
             <td>
-                Category: {{modelProduct.categoryName}}
+                {{modelProduct.name}}
             </td>
             <td>
-                Name: {{modelProduct.name}}
+                {{modelProduct.description}}
             </td>
             <td>
-                Description: {{modelProduct.description}}
-            </td>
+                {{modelProduct.price}}
+            </td>            
             <td>
-                Price: {{modelProduct.price}}
-            </td>
-            <td>
-                Review: {{model.reviewText}}
+                <p *ngFor="let item of model">
+                {{item}}
+                </p>
             </td>
             <td>
                 <img [src]="modelProduct.imagePath" alt="image Product" width="200px" class="product-img">
             </td>
             <td>
-                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.id]">Edit</button>
-                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', model.id]">Add Cart</button>
+                <ng-container *ngIf="isAdmin">
+                    <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', modelProduct.id]">Edit</button>
+                  </ng-container>
+                  
+                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', modelProduct.id]">Add Cart</button>
             </td>
         </tr>
     </tbody>
