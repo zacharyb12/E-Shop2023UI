@@ -1,40 +1,44 @@
 <h1>Shopping List</h1>
 
 <div *ngIf="cartItemsArray">
-  <table class="container-product" *ngIf="cartProducts && cartItemsArray">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Picture</th>
-        <th>Price</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of cartProducts; let i = index">
-        <td>{{ item.name }}</td>
-        <td>{{ item.price }}</td>
-        <td>{{ cartItemsArray[i].quantity }}</td>
-        <td><img src="{{item.imagePath}}" alt="{{ item.name }}" width="200px"></td>
-        <td>
-          {{ item.price * cartItemsArray[i].quantity }}
-        </td>
-        <td>
-          <button class="btn btn-primary" id="btn" (click)="addQuantity(item.id)">Add</button>
-          <button class="btn btn-primary" id="btn" (click)="removeQuantity(item.id)">Remove</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div id="containContainerProduct" class="card ms-3 mt-3">
+      <div *ngFor="let item of cartProducts; let i = index">
+
+          <div id="containCartProduct" class="card bg-opacity-75 bg-black mt-1">
+
+            <div id="infoProductCart" class="card w-50 mt-5 ms-5">
+              <p class="shadow mt-3 w-75 m-auto rounded-5 text-center">name :{{ item.name }}</p>
+              <p class="shadow w-75 m-auto">Price :{{ this.cartItemModel.itemPrice }}</p>
+              <p class="shadow w-75 m-auto">Quantity :{{ cartItemsArray[i].quantity }}</p>
+          </div>
+          
+          <div class="card w-25 mt-5 ms-5">
+            Total :{{ cartItemModel.totalPrice }}
+          </div>
+          
+          <div id="imgCart" class="card me-3 align-self-end">
+            <a routerLink="/product/product-details-for-user/{{ item.id }}">
+              <img src="{{item.imagePath}}" alt="{{ item.name }}" width="280px">
+            </a>
+          </div>
+          
+          
+          <div class="row w-50 align-self-start mt-3 mb-3">
+            <button class="btn btn-primary col-5 m-auto" id="btn" (click)="addQuantity()">Add</button>
+            <button class="btn btn-primary col-5 m-auto" id="btn" (click)="removeQuantity()">Remove</button>
+          </div>
+        </div>
+            
+        </div>
+
 </div>
 
 <div *ngIf="!cartItemsArray">
   <p>Your shopping cart is empty.</p>
 </div>
 
-<!-- Section pour afficher les informations du produit -->
+<!-- Section pour afficher les informations du produit
 <div *ngIf="model.id">
   <h2>Product Details</h2>
   <p>Name: {{ model.name }}</p>
@@ -42,4 +46,4 @@
   <p>Category: {{ model.categoryName }}</p>
   <p>Description: {{ model.description }}</p>
   <img [src]="model.imagePath" alt="Product Image" width="200">
-</div>
+</div> -->

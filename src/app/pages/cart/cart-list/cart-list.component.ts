@@ -1,10 +1,12 @@
+// Import necessary Angular modules and dependencies
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product/models-product/product.model';
 import { Productservices } from '../../product/services-product/product.service';
-import { CartItem } from './cart-service/models-cart/cart-item.model';
+import { CartItem, updateCartItem } from './cart-service/models-cart/cart-item.model';
 import { CartService } from './cart-service/cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/component/AuthGuard/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart-list',
@@ -12,84 +14,103 @@ import { AuthService } from 'src/app/component/AuthGuard/auth.service';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
+
+  id: string | undefined;
+  cartItemModel: CartItem; // Cart item model
+  model: Product; // Product model
+  cartItemsArray: CartItem[] = []; // Array to store cart items
+  cartProducts: Product[] = []; // Array to store products in the cart
+
+  // Constructor with injections of necessary services and dependencies
   constructor(
     private productService: Productservices,
     private cartService: CartService,
     private route: ActivatedRoute,
     private authService: AuthService
+
   ) {
+    // Initialize the product model
     this.model = {
-      id : '',
-      name : '',
-      price : 0,
-      imagePath : '',
-      rating : 0,
-      stockQuantity : 0,
-      categoryName : '',
-      description : '',
-    }
-    this.cartItemModel  = {
-      id : '',
-      userId : '',
-      productId : '',
-      quantity : 0,
-    }
-   }
+      id: '',
+      name: '',
+      price: 0,
+      imagePath: '',
+      rating: 0,
+      stockQuantity: 0,
+      categoryName: '',
+      description: '',
+    };
 
-   id: string | undefined;
-   
-  cartItemModel: CartItem;
-  model: Product;
-  cartItemsArray: CartItem[] = [];
-  cartProducts: Product[] = []; // Liste des produits du panier
+    // Initialize the cart item model
+    this.cartItemModel = {
+      id: '',
+      userId: '',
+      productId: '',
+      quantity: 0,
+      itemPrice: this.model.price,
+      totalPrice: 0,
+    };
+  }
 
-  
-  ngOnInit(): void {
-    this.cartService.getCartItemsByUserId(this.authService.userIdString).subscribe((data) => {
-      // Assurez-vous que data est toujours un tableau, même si un seul élément est retourné
-      this.cartItemsArray = Array.isArray(data) ? data : [data];
-    
-      // Pour chaque élément du panier, récupérer le produit associé
-      for (const cartItem of this.cartItemsArray) {
-        this.productService.getProductById(cartItem.productId.toString()).subscribe((cartProduct) => {
-          // Ajouter le produit associé à la liste des produits du panier
-          this.cartProducts.push(cartProduct);
+
+
+  // Lifecycle hook called after component initialization
+  ngOnInit() {
+    // Fetch cart items for the current user
+    this.cartService.getCartItemsByUserId(this.authService.userIdString).subscribe(
+      (cartItems) => {
+        // Update the cart items array
+        this.cartItemsArray = cartItems;
+
+        // Iterate through each cart item
+        this.cartItemsArray.forEach((cartItem) => {
+          // Fetch the corresponding product for each cart item
+          this.productService.getProductById(cartItem.productId).subscribe(
+            (product) => {
+              // Update the cart products array
+              this.cartProducts.push(product);
+
+              // Update the cart item model with the retrieved product details
+              this.updateCartItemModel(cartItem, product);
+
+              return this.cartProducts;
+            }
+          );
         });
+      },
+      (error) => {
+        console.error('Error fetching cart items:', error);
       }
-    });
-    }
+    );
+  }
 
-  addQuantity(id: string) {
+  // Method to increase the quantity of a cart item
+  addQuantity(): void {
+    this.cartItemModel.quantity += 1;
+    this.cartItemModel.totalPrice += this.cartItemModel.itemPrice;
+    this.updateCartItem();
+  }
 
-    const cartItem = this.cartItemsArray.find((item) => item.productId === id);
-
-    if (cartItem) {
-      cartItem.quantity += 1;
-
-      this.cartService.updateCartItem(this.cartItemModel.id.toString(), cartItem).subscribe((updatedCartItem) => {
-        
-      });
+  // Method to decrease the quantity of a cart item
+  removeQuantity(): void {
+    if (this.cartItemModel.quantity === 1) {
+      this.cartItemModel.totalPrice -= this.cartItemModel.itemPrice;
+      this.cartService.deleteCartItem(this.cartItemModel.id);
+    } else {
+      this.cartItemModel.quantity -= 1;
+      this.updateCartItem();
     }
   }
 
-  removeQuantity(id: string) {
-    // Trouver l'élément correspondant dans le panier
-    const cartItem = this.cartItemsArray.find((item) => item.productId === id);
+  // Private method to update a cart item's details
+  private updateCartItem(): void {
+    this.cartItemModel.totalPrice = this.cartItemModel.itemPrice * this.cartItemModel.quantity;
+    this.cartService.updateCartItem(this.cartItemModel.id, this.cartItemModel);
+  }
 
-    if (cartItem) {
-      // Diminuer la quantité de 1 (ou ajustez selon votre logique)
-      cartItem.quantity -= 1;
-
-      if (cartItem.quantity < 1) {
-        // Supprimer l'élément du panier si la quantité devient inférieure à 1
-        this.cartItemsArray = this.cartItemsArray.filter((item) => item.productId !== id);
-      }
-
-      // Mettre à jour le panier dans le service
-      this.cartService.updateCartItemQuantity(this.cartItemModel.id, this.cartItemModel.quantity).subscribe((updatedCartItem) => {
-        // Gérez la réponse du service si nécessaire
-      });
-      
-    }
+  // Private method to update the cart item model with product details
+  private updateCartItemModel(cartItem: CartItem, product: Product): void {
+    this.cartItemModel.totalPrice = cartItem.quantity * cartItem.itemPrice;
+    this.cartItemModel.itemPrice = cartItem.itemPrice;
   }
 }

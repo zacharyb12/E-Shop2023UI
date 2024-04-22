@@ -1,0 +1,29 @@
+<h1>Product Review</h1>
+<div id="add">
+  <a [routerLink]="['/product/products-add']" class="btn btn-primary">Add Product Review</a>
+</div>
+<div class="container-total" id="body">
+
+  <ng-container *ngIf="productsReview$ | async as productReview" >
+  
+    <table >
+      <thead>
+        <th>User Id</th>
+        <th>Product Id</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th>Date</th>
+        </thead>
+        <tr *ngFor="let productReview of productReview">
+          <td>{{productReview.userId}}</td>
+          <td>{{productReview.productId}}</td>
+          <td>{{productReview.reviewText}}</td>
+          <td>{{productReview.rating}}</td>
+          <td>{{productReview.reviewDate}}</td>
+          <td>
+            <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-edit', productReview.id]">Edit</button>
+          </td>
+        </tr>
+      </table>
+    </ng-container>
+</div>

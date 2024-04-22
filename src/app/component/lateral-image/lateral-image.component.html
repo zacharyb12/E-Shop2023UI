@@ -1,0 +1,12 @@
+
+<div id="containerRight">
+    <ng-container *ngIf="products$ | async as products">   
+        <div *ngFor="let product of products">
+            <a routerLink="/product/product-details-for-user/{{ product.id }}">
+                <div>
+                    <img [src]="product.imagePath" alt="" width="200px" class="product-img">    
+                </div>
+            </a>
+        </div>        
+    </ng-container>
+</div>

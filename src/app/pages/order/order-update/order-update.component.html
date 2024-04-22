@@ -1,1 +1,38 @@
-<p>order-update works!</p>
+<h1>Order Update</h1>
+<div id="formulZone">
+
+    <ng-container *ngIf="model" >
+        
+    <div class="mt-3">
+        <label class="form-label">Id</label>
+        <input type="text" id="id" class="form-control"
+            name="id" [(ngModel)]="model.id">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">UserId</label>
+        <input type="text" id="UserId" class="form-control"
+            name="UserId" [(ngModel)]="model.userId">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Order Date</label>
+        <input type="text" id="orderDate" class="form-control"
+            name="orderDate" [(ngModel)]="model.orderDate">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Order Status</label>
+        <input type="text" id="status" class="form-control"
+            name="status" [(ngModel)]="model.status">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">totalPrice</label>
+        <input type="number" id="totalPrice" class="form-control"
+            name="totalPrice" [(ngModel)]="model.totalPrice">
+    </div>
+
+  </ng-container>
+</div>
+  

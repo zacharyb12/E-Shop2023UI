@@ -1,3 +1,4 @@
+// Import necessary Angular modules and dependencies
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../user-services/user.service';
 import { User } from '../models/user.model';
@@ -8,23 +9,26 @@ import { Observable, Subject } from 'rxjs';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit, OnDestroy{
+export class UserListComponent implements OnInit, OnDestroy {
 
-  constructor(
-    private userService: UserService,
-  ) {
+  // Inject the UserService into the component
+  constructor(private userService: UserService) {
+    // Initialize userList$ with the result of getAllUsers() from the UserService
     this.userList$ = this.userService.getAllUsers();
   }
+
+  // ngOnDestroy lifecycle hook: called just before Angular destroys the component
   ngOnDestroy(): void {
+    // Unsubscribe from any ongoing observables or cleanup tasks to prevent memory leaks
     // this.destroyed.complete();
   }
 
-  // destroyed= new Subject<boolean>;
+  // Observable to hold the list of users
+  destroyed= new Subject<boolean>;
   userList$? : Observable<User[]>;
-  
-  ngOnInit(): void {
-    // this.userList$ = this.userService.getAllUsers();
-      // takeUntil(this.destroyed);
-  }
 
+  // ngOnInit lifecycle hook: called after the component is initialized
+  ngOnInit(): void {
+
+  }
 }

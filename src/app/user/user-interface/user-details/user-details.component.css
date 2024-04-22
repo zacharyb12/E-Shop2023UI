@@ -1,0 +1,36 @@
+
+table{
+    width: 40rem;
+    margin: 3rem auto 3rem auto;
+    align-items: center;
+}
+ .container{
+margin: 0 auto;
+ }
+
+ /* *{
+    border: 5px solid black
+} */
+
+#containerInfo{
+    background-color: rgb(102, 99, 99);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 5rem auto auto 10rem;
+    padding:1%;
+    border-radius: 10%;
+
+}
+
+#infoDiv{
+    margin: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.296);
+    border-radius: 10%;
+}
+
+#carousel{
+    margin: -20rem 8rem 0 auto;
+    width: 30rem;
+    height: 20.2rem;
+
+}

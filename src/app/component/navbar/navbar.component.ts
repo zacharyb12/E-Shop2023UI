@@ -1,3 +1,4 @@
+// Import necessary Angular modules and dependencies
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Categoryservices } from '../../pages/categories/services-categories/categories.service';
 import { AuthService } from '../AuthGuard/auth.service';
@@ -10,53 +11,47 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  userStatus = '';
-  isConnected = false;
-  userIdStringNavbar = '';
+  // Variables to store user status, login status, user ID, and admin status
+  userStatus = localStorage.getItem('userStatus');
+  isConnected = false; // Flag indicating whether the user is connected
+  userIdStringNavbar = this.authService.userIdString; // User ID from the AuthService
+  isAdmin: boolean = false; // Flag indicating whether the user is an admin
 
-  wallpaperClass: string;
-
+  // Constructor with injections of Categoryservices, AuthService, and Router
   constructor(
     private categoryService: Categoryservices,
     private authService: AuthService,
     private router: Router,
-  ) {
-    const currentDate = new Date();
+  ) {}
 
-    // Diviser l'année en quatre trimestres
-    const secondQuarterStart = new Date(currentDate.getFullYear(), 3, 1);
-    const thirdQuarterStart = new Date(currentDate.getFullYear(), 6, 1);
-    const fourthQuarterStart = new Date(currentDate.getFullYear(), 9, 1);
-  
-    // Définir la classe CSS pour chaque trimestre
-    if (currentDate < secondQuarterStart) {
-      this.wallpaperClass = 'noel-bg';
-    } else if (currentDate < thirdQuarterStart) {
-      this.wallpaperClass = 'noel-bg';
-    } else if (currentDate < fourthQuarterStart) {
-      this.wallpaperClass = 'noel-bg';
-    } else {
-      this.wallpaperClass = 'noel-bg';
-    }
-    
-  }
-  
-
+  // Lifecycle hook called after component initialization
   ngOnInit(): void {
+    // Subscribe to the isLogged$ observable to get real-time updates on login status changes
     this.authService.isLogged$.subscribe((isLogged) => {
+      // Update the isConnected flag based on the login status
       this.isConnected = isLogged;
-      this.userStatus = this.authService.userStatus;
+
+      // Retrieve and update user status from local storage
+      this.userStatus = localStorage.getItem('status');
+
+      // Check if the user is an admin and update the isAdmin flag accordingly
+      if (this.userStatus == 'admin') {
+        this.isAdmin = true;
+      }
+
+      // Update the user ID from the AuthService
       this.userIdStringNavbar = this.authService.userIdString;
     });
   }
 
+  // Private method to update authentication status
   private updateAuthStatus(isLogged: boolean) {
     this.isConnected = isLogged;
     this.userIdStringNavbar = this.authService.userIdString;
   }
 
+  // Logout method
   logout() {
     this.authService.logout();
-    this.router.navigate(['#']);
   }
 }

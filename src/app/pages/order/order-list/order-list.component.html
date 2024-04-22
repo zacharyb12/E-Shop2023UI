@@ -48,8 +48,7 @@
             {{ order.totalPrice }}
           </td>
           <td>
-            <button class="btn btn-primary" id="btnEdit" [routerLink]="['/user/order-update', order.id]">Edit</button>
-            <button class="btn btn-primary" id="btnShow" [routerLink]="['/user/order-details', order.id]">Show</button>
+            <button class="btn btn-primary" id="btnEdit" [routerLink]="['/order/order-update/', order.id]">Edit</button>
           </td>
         </tr>
       </tbody>

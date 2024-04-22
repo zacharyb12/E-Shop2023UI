@@ -19,12 +19,13 @@
                     </div>
 
                     <div id="buttonProduct">
-                        <button class="btn btn-primary" id="btn">Add Cart</button>
+                        <button class="btn btn-primary" id="btn" (click)="addToCart(product)">Add Cart</button>
+
                         <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-details/'+ product.id]">show</button>
                     </div>
 
                 <div id="imageProduct">
-                    <img [src]="product.imagePath" alt="" width="150px" class="{{product.name}}">
+                    <img [src]="product.imagePath" alt="" width="200px" class="{{product.name}}">
                 </div>
 
 

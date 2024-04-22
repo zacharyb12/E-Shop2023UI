@@ -1,27 +1,37 @@
+
+
 h1{
   text-align: center;
 }
- 
-table{
-  margin: 5rem auto 0 3rem;
-  border: 3px solid black;
-  text-align: center;
-}
-th{
-  width: 7rem;
-  border: 4px solid black;
-}
-tr{
-  width: 7rem;
-  border: 3px solid black;
-  text-align: center;
-}
-td{
-  border: 3px solid black;
-}
-  
+
 button{
-  margin: 0.2rem 1rem;
- width: 5rem;
+margin: 0.2rem 1rem;
+ width: 5.4rem;
  height: 2.2rem;
-  }
+}
+
+#imgCart{
+  margin: -15.2rem 0 auto 0;
+}
+#imgCart:hover{
+  transform: scale(2);
+  transition: transform 0.8s ease;
+}
+
+#containContainerProduct{
+  margin-top: 10rem;
+  width: 47rem;
+}
+
+#containCartProduct{
+  width: 45rem;
+  margin: 1rem auto 1rem auto;
+}
+#infoProductCart:hover{
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
+}
+
+#infoProductCart{
+  height: 10rem;
+}

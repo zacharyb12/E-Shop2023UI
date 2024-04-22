@@ -17,11 +17,13 @@
       <img id="img" src="assets/images/7184305.png" alt="Mon Logo" width="50">
     </a>
 
-    <button id="logout" class="nav-link bg-danger" (click)="logout()"> Disconnect </button>
+    <a class="logo" href="#">
+      <img id="img" src="assets/images/logout.png" (click)="logout()" alt="Mon Logo" width="50">
+    </a>
 
   </div>
 
-
+  
     <div *ngIf="!isConnected" class="container s4" id="loginUser">
       
       <app-login-user></app-login-user>
@@ -37,79 +39,86 @@
   
   <div  id="link">
     
-    <a class="nav-link bg-black" href="#">
-      Home
-    </a>
-    
-    
-    <a class="nav-link dropdown-toggle bg-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Menu
-    </a>
+   
+      <a id="btnMenu" class="nav-link dropdown-toggle bg-black" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Menu
+      </a>
 
     
-    <a  class="nav-link bg-black" href="/user-interface/user-view">
-      Acceuil
-    </a>
-    
-    <a  class="nav-link bg-black" href="/product/product-user-view">
-      Product
-    </a>
-
-        <li class="nav-item dropdown bg-black">
-          <ul class="dropdown-menu">
-            
+    <li class="nav-item dropdown bg-black">
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="#">
+            Home
+          </a>
+        </li>
+        <li>
+          <a  class="dropdown-item" href="/user-interface/user-view">
+            Search
+          </a>
+        </li>
+        
+        <li>
+          <a  class="dropdown-item" href="/product/product-user-view">
+            All Product
+          </a>
+        </li>
+        <!-- <ng-container> *ngIf="isAdmin" -->
           <li>
-          <a class="dropdown-item" href="/categories/categories">
-            Categories
-          </a>
-        </li>
+            <a class="dropdown-item" href="/categories/categories">
+              Categories
+            </a>
+          </li>
+          
+      <li>
+        <a class="dropdown-item" href="/product/products">
+          Products
+        </a>
+      </li>
 
-        <li>
-          <a class="dropdown-item" href="/product/products">
-            Products
-          </a>
-        </li>
-
-        <li>
-          <a class="dropdown-item" href="/order/order-list">
-            Order List
-          </a>
-        </li>
-        
-        <li>
-          <a class="dropdown-item" href="/product-review/product-review-list">
-            Review List
-          </a>
-        </li>
-        
-        <li>
-          <a class="dropdown-item" href="/user/user-list">
-            User List
-          </a>
-        </li>
-        
-        <li>
-          <a class="dropdown-item" href="/favorite-item/favorite-item">
-            Favorite Item
-          </a>
-        </li>
-        
-        <li>
-          <a class="dropdown-item" href="/payment/payment">
-            Payment 
-          </a>
-        </li>
-        
-        <li>
-          <a class="dropdown-item" href="/delivery/delivery">
-            Delivery
-          </a>
-        </li>
-        
-      </ul>
-    </li>
+      <li>
+        <a class="dropdown-item" href="/order/order-list">
+          Order List
+        </a>
+      </li>
     
+      <li>
+        <a class="dropdown-item" href="/product-review/product-review-list">
+          Review List
+        </a>
+      </li>
+    
+      <li>
+        <a class="dropdown-item" href="/user/user-list">
+          User List
+        </a>
+      </li>
+    
+      <li>
+        <a class="dropdown-item" href="/favorite-item/favorite-item">
+          Favorite Item
+        </a>
+      </li>
+    
+      <li>
+        <a class="dropdown-item" href="/payment/payment">
+          Payment 
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item" href="/delivery/delivery">
+          Delivery
+        </a>
+      </li>
+      
+    <!-- </ng-container> -->
+      
+    </ul>
+  </li>
+  
   </div>
+
 </div>
 
-<div class="background-container" [ngClass]="wallpaperClass"></div>
+<div class="background-container"></div>

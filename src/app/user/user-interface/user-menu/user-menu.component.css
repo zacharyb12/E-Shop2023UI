@@ -1,0 +1,24 @@
+h1{
+    width: 15rem;
+    margin: 5rem auto 0 28rem;
+}
+
+#sideRight{
+    float: right;
+    width: 25rem;
+    margin: -15rem 0 auto auto;
+}
+#infoUserLi{
+    background-color: rgba(0, 0, 0, 0.215);
+    width: 30rem;
+    list-style: none;
+    color: black;
+    text-align: center;
+    margin: 3rem auto 0 20rem;
+    font-size: larger;
+    font-weight: bolder;
+
+}
+p{
+    color: black;
+}

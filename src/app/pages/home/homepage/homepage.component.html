@@ -1,28 +1,64 @@
 <div id="body">
 
+  <div id="lateralImage">
+    <app-lateral-image></app-lateral-image>
+  </div>
+
   <h1>Welcome On E-Shop</h1>
-  
+
 <div id="header">
   <p>
-    Explorez notre collection unique d'objets électroniques, vêtements tendance, accessoires incontournables et bien plus encore. Découvrez le plaisir de trouver les dernières tendances à portée de clic.
+    Explorez notre collection unique d'objets électroniques, 
+  </p>
+  <p>
+    vêtements tendance, accessoires incontournables et bien plus encore. 
+  </p>
+  <p>
+    Découvrez le plaisir de trouver les dernières tendances à portée de clic.
   </p>
 </div>
 
   
 <div id="carousel">
 
-  <div id="carouselExample" class="carousel slide">
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="assets\images\electronics.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
+      <a routerLink="/product/product-byCategory/Electronics">
+        <div class="carousel-item active">
+          <img src="assets\images\electronics.jpg" class="d-block w-100" alt="...">
+        </div>
+      </a>
+      <a routerLink="/product/product-byCategory/bag">
+        <div class="carousel-item">
         <img src="assets\images\bag.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
+        </div>
+      </a>
+      <a routerLink="/product/product-byCategory/Blazer">
+        <div class="carousel-item">
         <img src="assets\images\blazer.png" class="d-block w-100" alt="...">
+        </div>
+      </a>
+      <a routerLink="/product/product-byCategory/Shoes">
+        <div class="carousel-item">
+        <img src="assets\images\BasketOFBasket.jpg" class="d-block w-100" alt="...">
       </div>
-    </div>
+      </a>
+      <a routerLink="/product/product-byCategory/Clothes">
+        <div class="carousel-item">
+          <img src="assets\images\Clothes.jpg" class="d-block w-100" alt="...">
+        </div>
+      </a>
+      <a routerLink="/product/product-byCategory/Jacket">
+        <div class="carousel-item">
+          <img src="assets\images\Jacket.jpg" class="d-block w-100" alt="...">
+        </div>
+      </a>
+      <a routerLink="/product/product-byCategory/Book">
+        <div class="carousel-item">
+          <img src="assets\images\Book.jpg" class="d-block w-100" alt="...">
+        </div>
+      </a>
+      </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -32,29 +68,6 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-  <!-- <div id="carouselExampleAutoplaying" class="carousel slide">
-    <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets\images\electronics.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="assets\images\bag.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="assets\images\bag.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
-
 </div>
 
 
@@ -62,14 +75,14 @@
     <div id="imgCategoriesCentrerZone">
 
       
-      <a routerLink="#"> 
+      <a routerLink="/product/product-byCategory/Soldes"> 
         <li class="imgCategoryPictures">
           <p class="categoryName">Soldes</p>
           <img class="imgCategorieslink" src="assets\images\soldes.jpg" alt="img" width="300rem" height="200">
         </li>
       </a>
 
-    <a routerLink="/product/product-byCategory/electronics">
+    <a routerLink="/product/product-byCategory/Electronics">
       <li class="imgCategoryPictures">
        <p class="categoryName">Electronics</p>
         <img class="imgCategorieslink" src="assets\images\electronics.jpg" alt="img" width="300rem" height="200">

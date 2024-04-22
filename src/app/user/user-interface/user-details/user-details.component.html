@@ -1,0 +1,79 @@
+
+    <div [(ngModel)]="model" class="container" class="table table-hover">
+
+        <div id="containerInfo" class="col-s4 w-25 active justify-content-center">
+
+        <div id="infoDiv">
+            Id:
+            {{model.id}}
+        </div>
+            
+        <div id="infoDiv">
+            LastName:
+            {{model.lastName}}
+        </div>
+            
+        <div id="infoDiv">
+            FirstName:
+            {{model.firstName}}
+        </div>
+
+
+        <div id="infoDiv">
+            Email:
+            {{model.email}}
+        </div>
+
+        <div id="infoDiv">
+            Status:
+            {{model.status}}
+        </div>
+
+        <div id="infoDiv">
+            Adresse:
+            {{model.address}}
+        </div>
+
+        <button class="btn btn-dark" id="btn" [routerLink]="['/user/user-update', model.id]">Edit</button>
+        </div> 
+    </div>
+
+    <div id="carousel">
+
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets\images\electronics.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\images\bag.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\images\blazer.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\images\accessories.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\images\BasketOFBasket.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\images\Clothes.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\images\Jacket.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\images\Book.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>

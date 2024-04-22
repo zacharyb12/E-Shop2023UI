@@ -3,7 +3,6 @@ export interface UpdateUser{
     lastName: string,
     firstName: string,
     email: string,
-    password: string,
     status : string,
     address: string,
 }

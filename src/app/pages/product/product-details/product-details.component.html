@@ -33,11 +33,11 @@
                 <img [src]="modelProduct.imagePath" alt="image Product" width="200px" class="product-img">
             </td>
             <td>
-                <ng-container *ngIf="isAdmin">
+                <div *ngIf="isAdmin === 'admin'">
                     <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', modelProduct.id]">Edit</button>
-                  </ng-container>
+                </div>
                   
-                <button class="btn btn-light" id="btn" [routerLink]="['/product/product-edit', modelProduct.id]">Add Cart</button>
+                <button class="btn btn-light" id="btn" (click)="addCart()">Add Cart</button>
             </td>
         </tr>
     </tbody>

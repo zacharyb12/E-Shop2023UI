@@ -1,0 +1,36 @@
+h1{
+    width: 8rem;
+    margin: 3rem auto 1rem auto;
+    text-align: center;
+    }
+    
+    #add{
+      margin: 0 auto 1rem auto;
+      width: 10rem;
+      height: 3rem;
+    }
+    
+    table{
+      margin: 5rem auto;
+      border: 3px solid black;
+      background-color: white;
+      width: 70rem;
+    }
+    th{
+      width: auto;
+      border: 4px solid black;
+      text-align: center;
+    }
+    tr{
+      border: 3px solid black;
+      text-align: center;
+    }
+    td{
+      border: 3px solid black;
+    }
+    
+    #formulZone{
+        width: 30rem;
+        margin: auto;
+        text-align: center;
+    }

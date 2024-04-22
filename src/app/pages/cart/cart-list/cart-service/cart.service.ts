@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CartItem } from './models-cart/cart-item.model';
+import { CartItem, updateCartItem } from './models-cart/cart-item.model';
 import { Observable } from 'rxjs';
 import { environment } from 'src/app/component/environments/environments';
 
@@ -13,7 +13,7 @@ export class CartService {
     private http : HttpClient
   ) { }
 
-  getAllCartItem() {
+  getAllCartItemByUserId() {
     return this.http.get<CartItem[]>(`${environment.apiBaseUrl}/api/CartItem`);
   }
 
@@ -22,25 +22,17 @@ export class CartService {
   }
   
 
+addCartItem(model: updateCartItem): Observable<void> {
+  return this.http.post<void>(`${environment.apiBaseUrl}/api/CartItem`, model);
+}
 
-  addCartItem(model: CartItem): Observable<void> {
-    return this.http.post<void>(`${environment.apiBaseUrl}/api/CartItem`, model);//?addAuth=true
-  }
+updateCartItem(id: string, updateCartItem: CartItem): Observable<CartItem> {
+  return this.http.put<CartItem>(`${environment.apiBaseUrl}/api/CartItem/${id}`, updateCartItem);
+}
 
-  updateCartItem(id: string, updateCategoryRequest: CartItem) : Observable<CartItem> {
-     return this.http.put<CartItem>(`${environment.apiBaseUrl}/api/CartItem/${id}`, //?addAuth=true
-    updateCategoryRequest,);
-  }
-
-  deleteCartItem(id: string) : Observable<CartItem> {
-    return this.http.delete<CartItem>(`${environment.apiBaseUrl}/api/CartItem/${id}`,//?addAuth=true
-    
-    )
-  }
-
-  updateCartItemQuantity(id: string, newQuantity: number): Observable<CartItem> {
-    const updateCategoryRequest = { quantity: newQuantity };
-    return this.http.put<CartItem>(`${environment.apiBaseUrl}/api/CartItem/${id}`, updateCategoryRequest);
-  }
+deleteCartItem(id: string): Observable<CartItem> {
+  return this.http.delete<CartItem>(`${environment.apiBaseUrl}/api/CartItem/${id}`);
+}
+  
   
 }

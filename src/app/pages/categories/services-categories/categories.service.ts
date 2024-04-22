@@ -1,3 +1,4 @@
+// Import necessary Angular modules and dependencies
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
@@ -11,36 +12,38 @@ import { environment } from 'src/app/component/environments/environments';
 })
 export class Categoryservices {
 
+  // Constructor with HttpClient injection
   constructor(
-    private http : HttpClient,
+    private http: HttpClient,
   ) { }
 
- // Méthode pour obtenir la liste des catégories
- getCategories(): Observable<Category[]> {
-  return this.http.get<Category[]>(`${environment.apiBaseUrl}/api/Category`);
-}
+  // Method to get the list of categories
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${environment.apiBaseUrl}/api/Category`);
+  }
 
- // Méthode pour obtenir une catégorie par son ID
- getCategoryById(id: string): Observable<Category> {
-  return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/id?id=${id}`);
-}
+  // Method to get a category by its ID
+  getCategoryById(id: string): Observable<Category> {
+    return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/ById/${id}`);
+  }
 
- // Méthode pour obtenir une catégorie par son 
-getCategoryByName(name: string): Observable<Category> {
-  return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/${name}`);
-}
+  // Method to get a category by its name
+  getCategoryByName(name: string): Observable<Category> {
+    return this.http.get<Category>(`${environment.apiBaseUrl}/api/Category/${name}`);
+  }
 
-addProduct(model: AddCategory): Observable<void> {
-  return this.http.post<void>(`${environment.apiBaseUrl}/api/Category`, model);//?addAuth=true
-}
+  // Method to add a new category
+  addCategory(model: AddCategory): Observable<void> {
+    return this.http.post<void>(`${environment.apiBaseUrl}/api/Category`, model);
+  }
 
-// Méthode pour mettre à jour une catégorie
-updateCategory(id: string, category: UpdateCategory): Observable<Category> {
-  return this.http.post<Category>(`${environment.apiBaseUrl}/api/Category/${id}`, category);
-}
+  // Method to update a category
+  updateCategory(id: string, category: UpdateCategory): Observable<Category> {
+    return this.http.put<Category>(`${environment.apiBaseUrl}/api/Category/${id}`, category);
+  }
 
-// Méthode pour supprimer une catégorie
-deleteCategory(id: string): Observable<Category> {
-  return this.http.delete<Category>(`${environment.apiBaseUrl}/api/Category/${id}`);
-}
+  // Method to delete a category
+  deleteCategory(id: string): Observable<Category> {
+    return this.http.delete<Category>(`${environment.apiBaseUrl}/api/Category/${id}`);
+  }
 }

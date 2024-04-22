@@ -1,3 +1,4 @@
+// Import necessary Angular modules and dependencies
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
@@ -12,38 +13,39 @@ import { loginUser } from '../models/login-user.model';
 })
 export class UserService {
 
+  // Inject the HttpClient service into the UserService
+  constructor(private http: HttpClient) {}
 
-
-constructor(
-  private http: HttpClient,
-  ) { }
-
-
-  getAllUsers(): Observable<User[]>{
-    return this.http.get<User[]>(`${environment.apiBaseUrl}/api/User`)
+  // getAllUsers: Fetches all users from the API
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${environment.apiBaseUrl}/api/User`);
   }
 
+  // getUserById: Fetches a user by ID from the API
   getUserById(id: string): Observable<User> {
     return this.http.get<User>(`${environment.apiBaseUrl}/api/User/${id}`);
   }
 
-  addUser(model : AddUser){
+  // addUser: Adds a new user using the provided data
+  addUser(model: AddUser): Observable<AddUser> {
     return this.http.post<AddUser>(`${environment.apiBaseUrl}/api/User/register`, model);
   }
 
-  updateUser(id: string, updateCategoryRequest: UpdateUser) : Observable<User> {
-    return this.http.put<User>(`${environment.apiBaseUrl}/api/User/${id}`, //?addAuth=true
-   updateCategoryRequest,);
- }
+  // updateUser: Updates an existing user by ID with new data
+  updateUser(id: string, updateCategoryRequest: UpdateUser): Observable<User> {
+    return this.http.put<User>(
+      `${environment.apiBaseUrl}/api/User/${id}`,
+      updateCategoryRequest
+    );
+  }
 
- loginUser(user : loginUser){
-  return this.http.post<loginUser>(`${environment.apiBaseUrl}/api/User/Login`, user)
+  // loginUser: Performs user login by sending login credentials to the API
+  loginUser(user: loginUser): Observable<loginUser> {
+    return this.http.post<loginUser>(`${environment.apiBaseUrl}/api/User/Login`, user);
+  }
 
- }
-
- deleteUser(id: string) : Observable<User> {
-   return this.http.delete<User>(`${environment.apiBaseUrl}/api/User/${id}`,//?addAuth=true
-   
-   )
- }
+  // deleteUser: Deletes a user by ID
+  deleteUser(id: string): Observable<User> {
+    return this.http.delete<User>(`${environment.apiBaseUrl}/api/User/${id}`);
+  }
 }

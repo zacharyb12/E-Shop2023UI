@@ -1,5 +1,5 @@
 #navbar{
-    height: 10rem;
+    height: 12rem;
     width: 100%;
     position: sticky;
 }
@@ -16,15 +16,15 @@
 #logoUser {
     display: flex;
     flex-direction: row;
-    margin: 2.5rem 5rem auto auto;
-    width: 20%;
+    margin: 2rem 1rem auto auto;
+    width: 28%;
     height: 5rem;
     float: right;
     position: relative;
 }
 
 .logo {
-    margin: 1rem 1rem;
+    margin: 2rem -1rem auto auto;
 }
 
 #img{
@@ -35,44 +35,46 @@
 
 #loginUser{
     float: right;
-    margin: 0.5rem 3rem auto auto;
-    height: auto;
-    width: 17rem;
-    position: relative;
+    margin: 0.5rem 1.2rem 0 auto;
+    height: 5.8rem;
+    width: 30rem;
 }
 
 #logout{
     color:black;
     margin: 1.4rem auto 0 auto;
-
 }
 
 #title {
-    width: 30%;
-    margin: 3rem auto 2rem auto;
-
-
+    width: auto;
+    max-width: 50%;
+    min-width: 30%;
+    margin: 3rem auto 2rem 19rem;
 }
 
 h3{
-    padding-top: 1.5rem;
-    width: auto;
-    margin: 0rem auto 0 auto;
-    height: 5rem;
+    padding-top: 3rem;
+    width: 100%;
+    margin: 1rem auto 0 auto;
+    height: 3rem;
 }
 
 h5{
+    padding-top: 3rem;
     width: auto;
-    margin: 1rem auto 0 auto;
-    height: 5rem;
+    margin: 1.5rem auto 0 auto;
+    height: 2rem;
 }
+
 
 #link {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 35rem;
-    margin: -6rem auto 0 3rem;
+    position: absolute;
+    width: 15rem;
+    height: 3rem;
+    margin: -8rem auto 0 0.5rem;
 
 
 }
@@ -91,7 +93,13 @@ a{
     list-style: none;
     border-radius: 10%;
     border: 2px solid black;
+}
 
+#btnMenu{
+    width: 13rem;
+    height: 2.5rem;
+    border: 5px solid black;
+    margin: 3rem auto 0 auto;
 }
 
 li{

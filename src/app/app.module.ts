@@ -19,23 +19,26 @@ import { CategoriesEditComponent } from './pages/categories/categories-edit/cate
 import { CartListComponent } from './pages/cart/cart-list/cart-list.component';
 import { ProductDetailsComponent } from './pages/product/product-details/product-details.component';
 import { OrderListComponent } from './pages/order/order-list/order-list.component';
-import { ProductReviewListComponent } from './pages/product/product-review/product-review-list/product-review-list.component';
+import { ProductReviewListComponent } from './pages/product-review/product-review-list/product-review-list.component';
 import { UserListComponent } from './user/user-list/user-list.component';
-import { UserUpdateComponent } from './user/user-update/user-update.component';
-import { UserAddComponent } from './user/user-add/user-add.component';
-import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { UserUpdateComponent } from './user/user-interface/user-update/user-update.component';
+import { UserAddComponent } from './user/user-interface/user-add/user-add.component';
+import { UserDetailsComponent } from './user/user-interface/user-details/user-details.component';
 import { OrderAddComponent } from './pages/order/order-add/order-add.component';
 import { OrderUpdateComponent } from './pages/order/order-update/order-update.component';
 import { OrderDetailsComponent } from './pages/order/order-details/order-details.component';
 import { LoginUserComponent } from './component/AuthGuard/login-user/login-user.component';
-import { UserMenuComponent } from './user-interface/user-menu/user-menu.component';
-import { UserViewComponent } from './user-interface/user-view/user-view.component';
+import { UserMenuComponent } from './user/user-interface/user-menu/user-menu.component';
+import { UserViewComponent } from './pages/user-search/user-view.component';
 import { FavoriteItemComponent } from './pages/favorite-item/favorite-item.component';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { PaymentComponent } from './pages/payment/payment.component';
-import { ProductByCategoryComponent } from './pages/product/product-by-category/product-by-category.component';
 import { ProductUserViewComponent } from './pages/product/product-user-view/product-user-view.component';
 import { TokenInterceptor } from './component/AuthGuard/token.interceptor';
+import { NewAccountComponent } from './user/user-interface/new-account/new-account.component';
+import { ProductReviewEditComponent } from './pages/product-review/product-review-edit/product-review-edit.component';
+import { LateralImageComponent } from './component/lateral-image/lateral-image.component';
+import { ProductDetailsForUserComponent } from './pages/product/product-details-for-user/product-details-for-user.component';
 
 @NgModule({
   declarations: [
@@ -65,8 +68,12 @@ import { TokenInterceptor } from './component/AuthGuard/token.interceptor';
     FavoriteItemComponent,
     DeliveryComponent,
     PaymentComponent,
-    ProductByCategoryComponent,
-    ProductUserViewComponent
+    ProductUserViewComponent,
+    ProductUserViewComponent,
+    NewAccountComponent,
+    ProductReviewEditComponent,
+    LateralImageComponent,
+    ProductDetailsForUserComponent,
   ],
   imports: [
     BrowserModule,
