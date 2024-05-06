@@ -1,16 +1,18 @@
+/* 
 #navbar{
     height: 12rem;
     width: 100%;
     position: sticky;
 }
 
-/* .background-container {
+ .background-container {
     background: url('./src/app/component/navbar/images/noel.png') fixed no-repeat top right;
 }
 
 .noel-bg {
     background: url('./src/app/component/navbar/images/noel.png') fixed no-repeat top right;
-} */
+} 
+
 
 
 #logoUser {
@@ -105,3 +107,5 @@ a{
 li{
     list-style: none;
 }
+
+*/

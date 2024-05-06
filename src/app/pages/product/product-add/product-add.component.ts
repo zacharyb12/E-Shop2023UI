@@ -23,7 +23,7 @@ export class ProductAddComponent {
     this.model = {
       name: '',
       price: 0,
-      imagePath: '',
+      imagePath: [''],
       categoryName: '',
       description: '',
       stockQuantity: 0,
@@ -31,19 +31,20 @@ export class ProductAddComponent {
     };
   }
 
-  // Method triggered when the form is submitted
+  imagePathInput: string = '';
+
+
   onFormSubmit(): void {
-    // Log the model data for verification
-    console.log(this.model);
-    
-    // Call the ProductService to add the new product
+
+    this.model.imagePath = this.imagePathInput.split(',');
+
     this.productService.addProduct(this.model)
       .subscribe({
-        // Navigate to the product list page upon successful addition
-        next: (response) => {
-          this.router.navigateByUrl('/product/products');
-        }
-      });
+      next: (response) => {
+        this.router.navigateByUrl('/product/products');
+      }
+    });
   }
+
 
 }

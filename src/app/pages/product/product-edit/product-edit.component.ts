@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Productservices } from '../services-product/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UpdateProduct } from '../models-product/update-product.model';
-import { Observable, Subscription, observable } from 'rxjs';
+import { Observable, Subscription} from 'rxjs';
 import { Categoryservices } from '../../categories/services-categories/categories.service';
 
 @Component({
@@ -32,12 +32,12 @@ export class ProductEditComponent {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    // Initialize the model with default values
+
     this.model = {
       id: '',
       name: '',
       price: 0,
-      imagePath: '',
+      imagePath: [''],
       description: '',
       stockQuantity: 0,
       categoryName: '',
@@ -45,11 +45,15 @@ export class ProductEditComponent {
     };
   }
 
+  imagePathInput: string = '';
+
+
+
   // Method triggered when the component is initialized
   ngOnInit(): void {
     // Retrieve the product ID from the route
     this.id = this.route.snapshot.paramMap.get('id');
-
+    console.log(this.id);
     if (this.id) {
       // Retrieve product details by ID
       this.productService.getProductById(this.id).subscribe((product) => {
@@ -57,23 +61,28 @@ export class ProductEditComponent {
       });
     }
   }
-
+  
   // Method to submit the updated product details
   onFormSubmit(): void {
     if (this.id) {
+      this.model.imagePath = this.imagePathInput.split(',');
       this.productService.updateProduct(this.id, this.model).subscribe({
         next: (response) => {
-          // Navigate back to the product list page after successful update
           this.router.navigateByUrl('/product/products');
         }
       });
     }
   }
 
-  // Method to delete the current product
   deleteProduct(): void {
     if (this.id) {
-      this.productService.deleteProduct(this.id);
+      this.productService.deleteProduct(this.id).subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/product/products');
+        }
+      });
     }
   }
+  
+  
 }

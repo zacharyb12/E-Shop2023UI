@@ -54,4 +54,19 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+
+  showLog : boolean = false;
+
+  showConnect()
+  {
+    if(this.showLog)
+    {
+      this.showLog = false;
+    }
+    else 
+    {
+      this.showLog = true;
+    }
+  }
+
 }

@@ -1,52 +1,12 @@
+<div class="row navbar bg-base-100">
+  <div class="flex-none col-1">
+    <div class="dropdown dropdown-hover ">
 
-<div class="col bg-dark text-center" id="navbar" data-bs-theme="dark">
-  <div *ngIf="isConnected" class="container s4" id="logoUser">
+      <div tabindex="0" role="button" class="btn m-1 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </div>
 
-
-    <i class="bi bi-star-fill"></i>
-
-    <a class="logo" [routerLink]="['user/user-details/'+ userIdStringNavbar]">
-      <img id="img" src="assets/images/6065566.png" alt="Mon Logo" width="50" height="50">
-    </a>
-    
-    <a class="logo" href="/cart/cart-list">
-      <img id="img" src="assets/images/2067434.png" alt="Mon Logo" width="50">
-    </a>
-    
-    <a class="logo" href="/user-interface/user-menu">
-      <img id="img" src="assets/images/7184305.png" alt="Mon Logo" width="50">
-    </a>
-
-    <a class="logo" href="#">
-      <img id="img" src="assets/images/logout.png" (click)="logout()" alt="Mon Logo" width="50">
-    </a>
-
-  </div>
-
-  
-    <div *ngIf="!isConnected" class="container s4" id="loginUser">
-      
-      <app-login-user></app-login-user>
-      
-    </div>
-  
-  <div class="container s4" id="title">
-
-    <h3 class="text-body-emphasis text-center">E-Shop2023</h3>
-    <h5 class="text-body-emphasis text-center">Le Shop online de 2024</h5>
-    
-  </div>
-  
-  <div  id="link">
-    
-   
-      <a id="btnMenu" class="nav-link dropdown-toggle bg-black" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Menu
-      </a>
-
-    
-    <li class="nav-item dropdown bg-black">
-      <ul class="dropdown-menu">
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 text-white shadow bg-base-100 rounded-box w-52">
         <li>
           <a class="dropdown-item" href="#">
             Home
@@ -75,7 +35,7 @@
           Products
         </a>
       </li>
-
+      
       <li>
         <a class="dropdown-item" href="/order/order-list">
           Order List
@@ -87,7 +47,7 @@
           Review List
         </a>
       </li>
-    
+      
       <li>
         <a class="dropdown-item" href="/user/user-list">
           User List
@@ -99,7 +59,7 @@
           Favorite Item
         </a>
       </li>
-    
+      
       <li>
         <a class="dropdown-item" href="/payment/payment">
           Payment 
@@ -112,13 +72,153 @@
         </a>
       </li>
       
-    <!-- </ng-container> -->
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="container col-4 text-center mt-5" id="title">
+
+    <h3 class=" col-8 w-75 text-white text-xl text-center align-item-center">E-Shop2023</h3>
+    <h5 class="col-8 w-75 text-white text-xl text-center align-self-center">Le Shop online de 2024</h5>
+    
+  </div>
+<div class="col-12">
+
+  <a routerLink="user-add" class="btn btn-primary ">
+    New Account
+  </a>
+  
+  <a routerLink="user-login" class="btn btn-primary">
+    Login
+  </a>
+</div>
+  
+</div>
+
+
+<!-- 
+<div class="row bg-dark text-center" id="navbar" data-bs-theme="dark">
+  
+  
+  
+  <div class="container text-center m-auto mt-5" id="title">
+
+    <h3 class=" col-4 text-body-emphasis text-center">E-Shop2023</h3>
+    <h5 class="col-4 text-body-emphasis text-center">Le Shop online de 2024</h5>
+    
+  </div>
+  
+
+  <div *ngIf="isConnected" class="container s4" id="logoUser">
+
+
+    <i class="bi bi-star-fill"></i>
+
+    <a class="logo" [routerLink]="['user/user-details/'+ userIdStringNavbar]">
+      <img id="img" src="assets/images/6065566.png" alt="Mon Logo" width="50" height="50">
+    </a>
+    
+    <a class="logo" href="/cart/cart-list">
+      <img id="img" src="assets/images/2067434.png" alt="Mon Logo" width="50">
+    </a>
+    
+    <a class="logo" href="/user-interface/user-menu">
+      <img id="img" src="assets/images/7184305.png" alt="Mon Logo" width="50">
+    </a>
+
+    <a class="logo" href="#">
+      <img id="img" src="assets/images/logout.png" (click)="logout()" alt="Mon Logo" width="50">
+    </a>
+
+  </div>
+
+  
+
+  
+    
+    <div class="justify-content-start"  id="link">
+      
+   
+      <a id="btnMenu" class=" btn btn-primary col-2 dropdown-toggle bg-black" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Menu
+      </a>
+
+    
+    <li class="nav-item dropdown bg-black">
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="#">
+            Home
+          </a>
+        </li>
+        <li>
+          <a  class="dropdown-item" href="/user-interface/user-view">
+            Search
+          </a>
+        </li>
+        
+        <li>
+          <a  class="dropdown-item" href="/product/product-user-view">
+            All Product
+          </a>
+        </li>
+         <ng-container> *ngIf="isAdmin" 
+          <li>
+            <a class="dropdown-item" href="/categories/categories">
+              Categories
+            </a>
+          </li>
+          
+      <li>
+        <a class="dropdown-item" href="/product/products">
+          Products
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item" href="/order/order-list">
+          Order List
+        </a>
+      </li>
+    
+      <li>
+        <a class="dropdown-item" href="/product-review/product-review-list">
+          Review List
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item" href="/user/user-list">
+          User List
+        </a>
+      </li>
+    
+      <li>
+        <a class="dropdown-item" href="/favorite-item/favorite-item">
+          Favorite Item
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item" href="/payment/payment">
+          Payment 
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item" href="/delivery/delivery">
+          Delivery
+        </a>
+      </li>
+      
+       </ng-container> 
       
     </ul>
   </li>
   
-  </div>
-
 </div>
 
-<div class="background-container"></div>
+</div>
+<div class="background-container"></div> 
+-->

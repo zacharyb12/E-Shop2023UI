@@ -34,7 +34,7 @@ export class CartListComponent implements OnInit {
       id: '',
       name: '',
       price: 0,
-      imagePath: '',
+      imagePath: [''],
       rating: 0,
       stockQuantity: 0,
       categoryName: '',
