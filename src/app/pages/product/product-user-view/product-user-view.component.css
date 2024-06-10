@@ -1,12 +1,10 @@
-/* *{
-    border: 2px solid red;
-} */
+/* 
 
 h1{
     text-align: center;
     margin: 5rem auto;
     background-color: rgba(0, 0, 0, 0.129);
-    width: auto;
+    width: 25rem;
 }
 #itemContainer{
     display: flex;
@@ -69,4 +67,4 @@ p{
 #btn{
     height: 2.2rem;
     margin: 1rem 0.5rem;
-}
+} */

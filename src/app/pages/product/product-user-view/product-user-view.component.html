@@ -1,27 +1,27 @@
 <h1>Product</h1>
 
     <div id="itemContainer" *ngIf="products | async as products" >
-        <div id="itemList" *ngFor="let product of products">
+        <div class="glass w-75 h-75 m-auto " *ngFor="let product of products">
 
             
 
-                <div id="textProduct">
+                <div class="w-75 m-auto p-3">
+                    <p class="">
+                        {{product.name}}
+                    </p>
+                    
                     <p>
-
-                    {{product.name}}
-                    <br>
-                    
-                    {{product.description}}
-                    
-                </p>
-                    <div id="productPrice">
+                        {{product.description}}
+                    </p>
+                
+                    <div class="w-25 justify-content-start">
                         {{product.price}}€
                     </div>
 
-                    <div id="buttonProduct">
-                        <button class="btn btn-primary" id="btn" (click)="addToCart(product)">Add Cart</button>
+                    <div class="w-75 justify-content-end p-2">
+                        <button class="btn btn-primary p-2 m-2" id="btn" (click)="addToCart(product)">Add Cart</button>
 
-                        <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-details/'+ product.id]">show</button>
+                        <button class="btn btn-primary p-2 m-2" id="btn" [routerLink]="['/product/product-details/'+ product.id]">show</button>
                     </div>
 
                 <div id="imageProduct">

@@ -4,22 +4,25 @@
     <app-lateral-image></app-lateral-image>
   </div>
 
-  <h1>Welcome On E-Shop</h1>
+  <div class="w-50 m-auto mt-5 text-center">
 
-<div id="header">
-  <p>
-    Explorez notre collection unique d'objets électroniques, 
-  </p>
-  <p>
-    vêtements tendance, accessoires incontournables et bien plus encore. 
-  </p>
-  <p>
-    Découvrez le plaisir de trouver les dernières tendances à portée de clic.
-  </p>
-</div>
+    <h1 class="text-2xl p-3">Bienvenu chez Shooop</h1>
+    
+    <div class="w-100 p-3">
+      <p class="text-xl">
+        Explorez notre collection unique d'objets électroniques, 
+      </p>
+      <p class="text-xl">
+        vêtements tendance, accessoires incontournables et bien plus. 
+      </p>
+      <p class="text-xl">
+        Découvrez les dernières tendances à portée de clic.
+      </p>
+    </div>
+  </div>
 
   
-<div id="carousel">
+<div class="w-50 m-auto pt-5">
 
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
     <div class="carousel-inner">
@@ -71,74 +74,89 @@
 </div>
 
 
-  <div id="imgCategories">
-    <div id="imgCategoriesCentrerZone">
+  <div class="row w-50 m-auto justify-content-evenly pt-5 list-none gap-4">
 
-      
-      <a routerLink="/product/product-byCategory/Soldes"> 
-        <li class="imgCategoryPictures">
-          <p class="categoryName">Soldes</p>
-          <img class="imgCategorieslink" src="assets\images\soldes.jpg" alt="img" width="300rem" height="200">
+    <div class="w-25">
+      <a class="" routerLink="/product/product-byCategory/Soldes"> 
+        <li class="">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Soldes</p>
+          <img class="" src="assets\images\soldes.jpg" alt="img" width="300rem" height="200">
         </li>
       </a>
-
-    <a routerLink="/product/product-byCategory/Electronics">
-      <li class="imgCategoryPictures">
-       <p class="categoryName">Electronics</p>
-        <img class="imgCategorieslink" src="assets\images\electronics.jpg" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
-    <a routerLink="/product/product-byCategory/bag">
-    <li class="imgCategoryPictures">
-      <p class="categoryName">Bag</p>
-        <img class="imgCategorieslink" src="assets\images\bag.jpg" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
-    <a routerLink="/product/product-byCategory/blazer">
-    <li class="imgCategoryPictures">
-       <p class="categoryName">Blazer</p>
-        <img class="imgCategorieslink" src="assets\images\blazer.png" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
-    <a routerLink="/product/product-byCategory/accessories">
-    <li class="imgCategoryPictures">
-      <p class="categoryName">Accesories</p>
-        <img class="imgCategorieslink" src="assets\images\accessories.jpg" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
-    <a routerLink="/product/product-byCategory/shoes">
-    <li class="imgCategoryPictures">
-       <p class="categoryName">Shoes</p>
-        <img class="imgCategorieslink" src="assets\images\BasketOFBasket.jpg" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
-    <a routerLink="/product/product-byCategory/clothing">
-    <li class="imgCategoryPictures">
-       <p class="categoryName">Clothing</p>
-        <img class="imgCategorieslink" src="assets\images\Clothes.jpg" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
-    <a routerLink="/product/product-byCategory/jacket">
-      <li class="imgCategoryPictures">
-      <p class="categoryName">Jacket</p>
-        <img class="imgCategorieslink" src="assets\images\Jacket.jpg" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
-    <a routerLink="/product/product-byCategory/book">
-    <li class="imgCategoryPictures">
-      <p class="categoryName">Books</p>
-        <img class="imgCategorieslink" src="assets\images\Book.jpg" alt="img" width="300rem" height="200">
-      </li>
-    </a>
-
     </div>
+      
+      <div class="w-25">
+        <a class="w-25" routerLink="/product/product-byCategory/Electronics">
+          <li class="">
+            <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Electronics</p>
+       <img class="" src="assets\images\electronics.jpg" alt="img" width="300rem" height="200">
+      </li>
+    </a>
+  </div>
+    
+    <div class="w-25">
+      <a class="w-25" routerLink="/product/product-byCategory/bag">
+        <li class="">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Bag</p>
+        <img class="" src="assets\images\bag.jpg" alt="img" width="300rem" height="200">
+      </li>
+    </a>
+  </div>
+    
+    <div class="w-25">
+      <a routerLink="/product/product-byCategory/blazer">
+        <li class="">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Blazer</p>
+        <img class="" src="assets\images\blazer.png" alt="img" width="300rem" height="200">
+      </li>
+    </a>
+  </div>
+    
+    <div class="w-25">
+      <a routerLink="/product/product-byCategory/accessories">
+        <li class="">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Accesories</p>
+        <img class="" src="assets\images\accessories.jpg" alt="img" width="300rem" height="200">
+      </li>
+    </a>
+  </div>
+
+    <div class="w-25">
+      <a routerLink="/product/product-byCategory/shoes">
+        <li class="">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Shoes</p>
+      <img class="" src="assets\images\BasketOFBasket.jpg" alt="img" width="300rem" height="200">
+      </li>
+    </a>
+  </div>
+    
+    <div class="w-25">
+      <a routerLink="/product/product-byCategory/clothing">
+        <li class="imgCategoryPictures">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Clothing</p>
+       <img class="imgCategorieslink" src="assets\images\Clothes.jpg" alt="img" width="300rem" height="200">
+      </li>
+    </a>
+  </div>
+    
+    <div class="w-25">
+      <a routerLink="/product/product-byCategory/jacket">
+        <li class="">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Jacket</p>
+          <img class="" src="assets\images\Jacket.jpg" alt="img" width="300rem" height="200">
+      </li>
+    </a>
+  </div>
+    
+    <div class="w-25">
+      <a routerLink="/product/product-byCategory/book">
+        <li class="">
+          <p class="ms-4 w-20 h-5 m-auto text-center bg-white bg-opacity-75 rounded-2 z-1 position-absolute">Books</p>
+      <img class="" src="assets\images\Book.jpg" alt="img" width="300rem" height="200">
+    </li>
+    </a>
+  </div>
+
   </div>
 
   

@@ -41,7 +41,7 @@ export class LoginUserComponent {
 
   // Function to navigate to the new account creation page
   newAccount(){
-    this.router.navigate(['/user-interface/new-account']);
+    this.router.navigate(['/user-add']);
   }
 }
 

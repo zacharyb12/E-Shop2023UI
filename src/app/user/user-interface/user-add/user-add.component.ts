@@ -27,6 +27,7 @@ export class UserAddComponent {
       status: 'user',
       address: '',
     };
+    confirmPassword : String;
   }
 
   // Method to handle form submission

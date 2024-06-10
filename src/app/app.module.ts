@@ -35,10 +35,10 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ProductUserViewComponent } from './pages/product/product-user-view/product-user-view.component';
 import { TokenInterceptor } from './component/AuthGuard/token.interceptor';
-import { NewAccountComponent } from './user/user-interface/new-account/new-account.component';
 import { ProductReviewEditComponent } from './pages/product-review/product-review-edit/product-review-edit.component';
 import { LateralImageComponent } from './component/lateral-image/lateral-image.component';
 import { ProductDetailsForUserComponent } from './pages/product/product-details-for-user/product-details-for-user.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -70,10 +70,10 @@ import { ProductDetailsForUserComponent } from './pages/product/product-details-
     PaymentComponent,
     ProductUserViewComponent,
     ProductUserViewComponent,
-    NewAccountComponent,
     ProductReviewEditComponent,
     LateralImageComponent,
     ProductDetailsForUserComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

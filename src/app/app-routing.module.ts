@@ -11,7 +11,6 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { FavoriteItemComponent } from './pages/favorite-item/favorite-item.component';
 import { HomepageComponent } from './pages/home/homepage/homepage.component';
 import { LoginUserComponent } from './component/AuthGuard/login-user/login-user.component';
-import { NewAccountComponent } from './user/user-interface/new-account/new-account.component';
 import { OrderAddComponent } from './pages/order/order-add/order-add.component';
 import { OrderListComponent } from './pages/order/order-list/order-list.component';
 import { OrderDetailsComponent } from './pages/order/order-details/order-details.component';
@@ -54,7 +53,6 @@ const routes: Routes = [
   { path: 'user/user-update/:id' , component: UserUpdateComponent , canActivate: [GuardAuthGuard]},
   { path: 'user/user-details/:id' , component: UserDetailsComponent , canActivate: [GuardAuthGuard] },
   { path: 'user-login' , component: LoginUserComponent },
-  { path: 'user-interface/new-account' , component: NewAccountComponent},
   { path: 'user-interface/user-menu' , component: UserMenuComponent , canActivate: [GuardAuthGuard]},
   { path: 'user-interface/user-view' , component: UserViewComponent },
   { path: 'favorite-item/favorite-item', component: FavoriteItemComponent , canActivate: [GuardAuthGuard]},

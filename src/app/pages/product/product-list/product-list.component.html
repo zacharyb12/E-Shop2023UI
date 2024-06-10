@@ -24,9 +24,9 @@
         <td>{{product.stockQuantity}}</td>
         <td>{{product.price}}</td>
         <td><img [src]="product.imagePath" alt="" width="100px" class="product-img"></td>
-        <td>
-          <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-edit', product.id]">Edit</button>
-          <button class="btn btn-primary" id="btn" [routerLink]="['/product/product-details', product.id]">show</button>
+        <td class="">
+          <button class="w-50 btn btn-dark p-2 w-20" id="btn" [routerLink]="['/product/product-edit', product.id]">Edit</button>
+          <button class="w-50 btn btn-dark p-2 w-20" id="btn" [routerLink]="['/product/product-details', product.id]">show</button>
         </td>
       </tr>
     </table>
